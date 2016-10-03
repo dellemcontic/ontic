@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int = "http://www.springframework.org/schema/integration"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int-syslog="http://www.springframework.org/schema/integration/syslog"
+       xmlns:hdp="http://www.springframework.org/schema/hadoop"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+       		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.0.xsd
+				http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd
+				http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd       		
+				http://www.springframework.org/schema/integration/syslog http://www.springframework.org/schema/integration/syslog/spring-integration-syslog-4.0.xsd
+         		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file-4.0.xsd
+       		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- intercept and log every message -->
+    <int:logging-channel-adapter id="logger" level="DEBUG" />
+    <int:wire-tap channel = "logger" /> 
+    
+    <!-- Default poller -->
+    <int:poller default="true" fixed-delay="1000"/>
+    
+	<int:channel id = "hdfsLastFile">
+	</int:channel>
+	
+	 <hdp:configuration id="hadoopConfiguration" register-url-handler="false">
+		fs.defaultFS=${hadoop.hdfsurl}
+	</hdp:configuration>
+	
+	
+	 <bean id="hadoopAccess" class="ontic.af.hadoop.HadoopAccess">
+    	<constructor-arg ref="hadoopConfiguration"/>
+    	<property name="basePath" value="${hadoop.basepath}"></property>
+     </bean>
+	
+	<int:inbound-channel-adapter ref="hadoopAccess" method="getLastFileContent" channel="hdfsLastFile">
+    <int:poller fixed-rate="5000"/>
+   </int:inbound-channel-adapter>
+   
+   <bean id="analyticDB" class="ontic.af.analytic.AnalyticsToDB">
+   </bean>
+	
+   <int:outbound-channel-adapter channel="hdfsLastFile" ref="analyticDB" method="analyze"/>
+   
+     
+     <jpa:repositories base-package="ontic.af.action.db.repository" />
+</beans>

@@ -1,0 +1,53 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+allprojects {
+  apply plugin: 'spring-boot'
+  dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.postgresql:postgresql:9.4-1201-jdbc4")
+    compile("commons-lang:commons-lang:2.3")
+    
+    testCompile("org.springframework.boot:spring-boot-starter-test") 
+}
+
+}
+
+
+
+bootRepackage {
+    enabled = false
+}
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}

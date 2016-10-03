@@ -1,0 +1,1 @@
+include "ontic-info-web", "ontic-info-service", "ontic-info-data", "ontic-info-commons"

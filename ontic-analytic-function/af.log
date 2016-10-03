@@ -1,0 +1,10 @@
+2016-06-22 11:34:28 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 9060 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-06-22 11:34:28 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-06-22 11:34:33 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-06-22 11:34:33 - Started OnticAnalyticFunctionApplication in 4.573 seconds (JVM running for 5.695)
+2016-06-22 11:34:48 - Analyzing:video_2016_04_02_10_50.tstat

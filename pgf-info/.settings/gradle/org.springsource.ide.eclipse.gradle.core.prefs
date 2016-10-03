@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Mon Mar 23 14:16:47 IST 2015
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;pgf-info-commons;pgf-info-data;pgf-info-service;pgf-info-web;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=
