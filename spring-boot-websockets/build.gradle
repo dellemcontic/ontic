@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+ 	baseName = 'spring-boot-websocket'
+    version =  '1.0.0'
+    from('src/main/resources') {
+   		include '**/*.html'
+   		include '**/*.jpg'
+   		include '**/*.js'
+	}
+	from('/') {
+   		include '**/*.properties'
+	}
+    manifest {
+        attributes 'Main-Class': 'com.emc.ontic.websocket.Application'
+    } 
+    doFirst {
+        from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+}
+
+allprojects {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/libs-release" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.springframework:spring-messaging")
+    compile ('org.apache.commons:commons-lang3:3.4')
+    compile ('org.codehaus.jackson:jackson-mapper-asl:1.9.13')
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+    testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}

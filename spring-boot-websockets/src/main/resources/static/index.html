@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spark Ontic WebSocket</title>
+	<link href="./style.css" rel="stylesheet" type="text/css" />
+	<link href="./template.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" background="./logo_background.jpg" cellpadding="0" cellspacing="0" width="100%" >
+		<tr>
+			<td width="25%">&nbsp;
+			</td>
+			<td align="center">
+				<img src="./logo_ontic.jpg"/>
+			</td>
+			<td width="25%">&nbsp;
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" background="./separator.jpg" cellpadding="0" cellspacing="0" width="100%" >
+		<tr>
+			<td width="25%">&nbsp;
+			</td>
+			<td align="center">
+				<img src="./separator.jpg"/>
+			</td>
+			<td width="25%">&nbsp;
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" cellpadding="0" cellspacing="0" width="100%" >
+		<tr>
+			<td width="25%">&nbsp;
+			</td>
+			<td align="center" width="25%">
+				<h2 class="header-font">BitRateServer KPI MB/s<br/>&nbsp;</h2>
+				<canvas id="mycanvas" height="260"></canvas>
+				<!--<div id="bitrateperminute">Hola</div>-->
+				<h2 id="bitrateperminute" class="header-font">&nbsp;</h2>
+			</td>
+			<td align="center" width="25%">
+				<h2 class="header-font">First Payload ms<br/>&nbsp;</h2>
+				<canvas id="mycanvas2" height="260"></canvas>
+				<div id="firstpayload">&nbsp;</div>
+			</td>
+			<td width="25%">&nbsp;
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" cellpadding="0" cellspacing="0" width="100%" >
+		<tr>
+			<td width="25%">&nbsp;
+			</td>
+			<td align="center">
+				<img src="./footer.jpg"/>
+			</td>
+			<td width="25%">&nbsp;
+			</td>
+		</tr>
+	</table>
+	<div id="output"></div>
+
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+	<script type="text/javascript" src="./smoothie.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var messageList = $("#messages");
+			var smoothie = new SmoothieChart({grid:{fillStyle:'#e5e9f2'},labels:{fillStyle:'#000000'},maxValue:700,minValue:0});
+			var smoothie2 = new SmoothieChart({grid:{fillStyle:'#e5e9f2'},labels:{fillStyle:'#000000'},maxValue:700,minValue:0});
+			//var smoothie2 = new SmoothieChart({grid:{fillStyle:'#e5e9f2'},labels:{fillStyle:'#000000'},maxValue:50,minValue:0});
+			canvas = document.getElementById('mycanvas');
+			canvas2 = document.getElementById('mycanvas2');
+			
+			// Data
+			var line1 = new TimeSeries();
+			var line2 = new TimeSeries();
+
+			// defined a connection to a new socket endpoint
+			var socket = new SockJS('/stomp');
+
+			var stompClient = Stomp.over(socket);
+
+            stompClient.connect({ }, function(frame) {
+				// subscribe to the /topic/message endpoint
+				stompClient.subscribe("/topic/message", function(data) {
+					var getKpis = JSON.parse(data.body);
+					output = document.getElementById("output");
+					var pre = document.createElement("p");
+				    pre.style.wordWrap = "break-word";
+				    pre.innerHTML = data.body;
+				    output.appendChild(pre);
+
+					line1.append(new Date().getTime(), getKpis.bitRateServer);
+					line2.append(new Date().getTime(), getKpis.firstPayload);
+					divbitrateperminute = document.getElementById('bitrateperminute');
+					divbitrateperminute.innerHTML = "Flows/Minute <b>" + getKpis.flowsPerMinute + "</b>";
+				});
+            });
+            
+            smoothie.addTimeSeries(line1, {lineWidth:2,strokeStyle:'#000000',fillStyle:'rgba(0,0,0,0.30)'});
+            smoothie2.addTimeSeries(line2, {lineWidth:2,strokeStyle:'#000000',fillStyle:'rgba(0,0,0,0.30)'});
+            smoothie.streamTo(canvas, 1466);
+            smoothie2.streamTo(canvas2, 1466);
+		});
+	</script>
+</body>
+</html>
