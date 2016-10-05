@@ -1,7 +1,0 @@
-com\emc\ontic\dashboard\messaging\service\ConsumerApplicationPGFSent.class
-com\emc\ontic\dashboard\messaging\service\ReceiverPGF.class
-com\emc\ontic\dashboard\messaging\service\Receiver.class
-com\emc\ontic\dashboard\AppMain.class
-com\emc\ontic\dashboard\messaging\service\ConsumerApplicationPGFReceived.class
-com\emc\ontic\dashboard\messaging\service\ReceiverPGFReceive.class
-com\emc\ontic\dashboard\messaging\service\ConsumerApplicationTraffic.class
