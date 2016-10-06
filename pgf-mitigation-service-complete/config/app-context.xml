@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int = "http://www.springframework.org/schema/integration"
+       xmlns:int-amqp="http://www.springframework.org/schema/integration/amqp"
+       xmlns:hdp="http://www.springframework.org/schema/hadoop"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans 
+       		http://www.springframework.org/schema/beans/spring-beans.xsd 
+       		http://www.springframework.org/schema/integration 
+       		http://www.springframework.org/schema/integration/spring-integration.xsd
+       		http://www.springframework.org/schema/integration/amqp 
+       		http://www.springframework.org/schema/integration/amqp/spring-integration-amqp-4.0.xsd
+       		http://www.springframework.org/schema/rabbit 
+       		http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd
+       		http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+       
+    <!-- Placeholder properties -->
+    <context:property-placeholder location="application.properties"/>
+    	
+	<rabbit:connection-factory id="rabbitConnectionFactory" port="${rabbitmq.port}" host="${rabbitmq.server}" virtual-host="${rabbitmq.virtualhost}" username="${rabbitmq.username}" password="${rabbitmq.password}" />
+	
+	<rabbit:admin connection-factory="rabbitConnectionFactory"/>
+
+	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory" exchange="${rabbitmq.exchange}" routing-key="${rabbitmq.routingkey}" />
+              
+  
+</beans>

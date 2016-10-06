@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "rabbitmq.server",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.server'"
+  },
+  {
+    "name": "rabbitmq.port",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.port'"
+  },
+  {
+    "name": "rabbitmq.username",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.username'"
+  },
+  {
+    "name": "rabbitmq.password",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.password'"
+  },
+  {
+    "name": "rabbitmq.virtualhost",
+    "type": "java.lang.String",
+    "description": "A description for 'rabbitmq.virtualhost'"
+  }
+]}
