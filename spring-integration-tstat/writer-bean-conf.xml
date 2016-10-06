@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:hdp="http://www.springframework.org/schema/hadoop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:int-file="http://www.springframework.org/schema/integration/file"
+	xmlns:int-amqp="http://www.springframework.org/schema/integration/amqp"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xmlns:int-jmx="http://www.springframework.org/schema/integration/jmx"
+	xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/integration
+						http://www.springframework.org/schema/integration/spring-integration.xsd
+						http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd
+						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+						http://www.springframework.org/schema/integration/amqp http://www.springframework.org/schema/integration/amqp/spring-integration-amqp.xsd
+						http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
+						http://www.springframework.org/schema/integration/jmx http://www.springframework.org/schema/integration/jmx/spring-integration-jmx.xsd
+						http://www.springframework.org/schema/integration/file
+						http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
+
+	<context:property-placeholder location="../conf/filewriter.properties,../conf/hadoop.properties"/>
+
+	<int-jmx:mbean-export default-domain="com.pivotal.loganalytics" server="mbeanServer"/>
+ 
+ 	<bean id="mbeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean"> 
+ 		<property name="locateExistingServerIfPossible" value="true"/>
+	</bean>
+
+<!-- Uncomment this to enable syslog collection on the hdfs ingester node -->
+<!-- 
+ 	<int-ip:tcp-connection-factory id="syslogListener" 
+  								   type="server"
+  								   port="${syslog.tcp.port}"
+  								   deserializer="lfDeserializer" />
+
+    <int-ip:tcp-inbound-channel-adapter id="tcpAdapter" channel="syslogChannel" connection-factory="syslogListener" />
+	<int-ip:udp-inbound-channel-adapter id="udpSyslogInputAdapter" channel="syslogChannel" port="${syslog.udp.port}" />
+	<int-ip:udp-inbound-channel-adapter id="udpSyslogInputAdapter" channel="syslogChannel" port="1514" />
+-->
+
+	<bean id="lfAppenderTransformer" class="com.pivotal.vodafone.loganalytics.integration.LfAppenderTransformer" />
+
+	<bean id="lfAppenderAndAggregatorTransformer" class="com.pivotal.vodafone.loganalytics.integration.LfAppenderAndAggregatorTransformer" />
+
+	<int:channel id="syslogChannel">
+	</int:channel>
+
+	<int:channel id="fileOutChannel">
+	</int:channel>
+
+
+ 	<int-amqp:inbound-channel-adapter concurrent-consumers="1" queue-names="syslog_queue" prefetch-count="500" connection-factory="connectionFactory" channel="amqpChannel"/>
+	<!-- acknowledge-mode="NONE" -->
+
+	<!-- Infrastructure -->
+
+	<rabbit:connection-factory id="connectionFactory" host="${rabbitmq.hostname}" />
+
+	<rabbit:template id="amqpTemplate" connection-factory="connectionFactory" />
+
+	<rabbit:admin connection-factory="connectionFactory" />
+
+	<rabbit:queue name="syslog_queue" durable="false" />
+
+	<rabbit:direct-exchange name="syslog_exchange" durable="false" >
+		<rabbit:bindings >
+			<rabbit:binding queue="syslog_queue" key="syslog_binding" />
+		</rabbit:bindings>
+	</rabbit:direct-exchange>
+
+	<int:channel id="amqpChannel"></int:channel>
+
+	<!-- This is a example of buffering together with buffered file writer -->
+	 	<!-- 
+	 	-->
+	<bean id="messageStore" class="org.springframework.integration.store.SimpleMessageStore" />
+
+	<bean id="messageStoreReaper" class="org.springframework.integration.store.MessageGroupStoreReaper">
+		<property name="messageGroupStore" ref="messageStore" />
+		<property name="timeout" value="10000" />
+	</bean>
+
+	<task:scheduler id="reaperScheduler" />
+	<task:scheduled-tasks scheduler="reaperScheduler">
+		<task:scheduled ref="messageStoreReaper" method="run" fixed-rate="200" />
+	</task:scheduled-tasks>
+
+	<int:aggregator input-channel="amqpChannel" output-channel="syslogChannel" message-store="messageStore" release-strategy="releaseStrategy"
+		correlation-strategy-expression="0"
+    	expire-groups-upon-completion="true" 
+    	send-partial-result-on-expiry="true" />  
+    	
+	<bean id="releaseStrategy" class="org.springframework.integration.aggregator.TimeoutCountSequenceSizeReleaseStrategy">
+    	<constructor-arg index="0" value="50" />
+    	<constructor-arg index="1" value="5000" />
+	</bean>
+
+	<bean id="textFileFactory" class="com.gopivotal.vodafone.loganalytics.file.TextFileFactory" init-method="init" p:fileExistsMode="APPEND">
+		<property name="destinationDirectoryExpression" value=" '${fs.output.directory.property}' + new java.text.SimpleDateFormat('yyyyMMdd').format(new java.util.Date()) + '/' + new java.text.SimpleDateFormat('HH00').format(new java.util.Date())" />
+		<property name="destinationFileNameExpression" value="new java.lang.String('syslog-') + new java.text.SimpleDateFormat('HHMMSS').format(new java.util.Date()) + new java.lang.String('.log')" />
+		<property name="rolloverThresholdInBytes" value="10000000" />
+	</bean>
+
+	<bean id="fileWritingMessageHandler" class="com.gopivotal.vodafone.loganalytics.file.FileWritingMessageHandler">
+		<property name="textFileFactory" ref="textFileFactory" />
+	</bean>
+
+	 <int:outbound-channel-adapter channel="syslogChannel" ref="fileWritingMessageHandler">
+	 </int:outbound-channel-adapter>
+
+		<!-- 
+		<int:chain id="TLHadoop" input-channel="syslogChannel">
+      <int:outbound-channel-adapter ref="hdfsWritingMessageHandler"/>
+	</int:chain>
+	
+		<hdp:configuration register-url-handler="false">
+fs.defaultFS=${hd.fs}
+</hdp:configuration>
+		<bean id="hadoopFs" class="org.springframework.data.hadoop.fs.FileSystemFactoryBean">
+<property name="configuration" ref="hadoopConfiguration"/>
+</bean>
+		<bean id="hdfsWritingMessageHandler" class="com.gopivotal.vodafone.loganalytics.streaming.HdfsWritingMessageHandler" >
+<constructor-arg ref="hdfsWriterFactory"/>
+</bean>
+
+<bean id="hdfsWriterFactory" class="com.gopivotal.vodafone.loganalytics.streaming.HdfsTextFileWriterFactory" >
+<constructor-arg ref="hadoopFs"/>
+<property name="basePath" value="${hdfs.basePath}"/>
+<property name="baseFilename" value="${hdfs.baseFilename}"/>
+<property name="fileSuffix" value="${hdfs.fileSuffix}"/>
+<property name="rolloverThresholdInBytes" value="${hdfs.rolloverThresholdInBytes}"/>
+</bean>
+       -->
+
+
+</beans>

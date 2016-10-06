@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int = "http://www.springframework.org/schema/integration"
+       xmlns:int-sftp = "http://www.springframework.org/schema/integration/sftp"
+       xmlns:int-amqp="http://www.springframework.org/schema/integration/amqp"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:int-file="http://www.springframework.org/schema/integration/file"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+       		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.0.xsd
+       		http://www.springframework.org/schema/integration/amqp http://www.springframework.org/schema/integration/amqp/spring-integration-amqp-4.0.xsd
+       		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd
+       		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file-4.0.xsd
+       		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd
+       		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- intercept and log every message -->
+    <int:logging-channel-adapter id="logger" level="DEBUG" />
+    <int:wire-tap channel = "logger" /> 
+    
+    <!-- Default poller -->
+    <int:poller default="true" fixed-delay="1000"/>
+    
+	<int:channel id = "tcpFlowsFiles">
+		<int:queue/>
+	</int:channel>
+	
+	<!-- Placeholder properties -->
+    <context:property-placeholder location="ingester-config.properties, rabbitmq-config.properties"  /> 
+    
+
+	
+	<bean id="logTcpCompleteScanner" class="com.pivotal.tstat.tcp.RecursiveNewestLeafOnlyDirectoryScanner">
+		<property name="filenameRegex" value=".*log_video_complete"></property>
+	</bean>
+
+	<int-file:inbound-channel-adapter scanner="logTcpCompleteScanner"
+		    directory="C:\Eclipse\spring-tool-suite-3.7.3\workspace\spring-integration-tstat\stdin"
+		    auto-create-directory="false"
+		    channel="tcpCompletedFlows"/>
+           
+	<!-- Channel with tcp completed flows -->
+	<int:channel id = "tcpCompletedFlows">
+       	<int:queue capacity="1000"/>
+    </int:channel>
+    
+    <!-- <int:splitter input-channel="tcpFlowsFiles" output-channel="tcpCompletedFlows">
+    	<bean class="org.springframework.integration.file.splitter.FileSplitter"/>
+	</int:splitter>-->
+    
+    <bean id="tcpFlowsTransformer" class="com.pivotal.tstat.tcp.TcpFlowsTransformer">
+    <property name="supressCommentLines" value="true"></property>
+    </bean>
+    
+    <!-- Channel with tcp completed flows -->
+	<int:channel id = "tcpPrunedFeaturesFlows">
+       	<int:queue capacity="1000"/>
+    </int:channel>
+    
+    <bean id="myHeaderMapper" class="org.springframework.integration.amqp.support.DefaultAmqpHeaderMapper">
+                    <property name="requestHeaderNames" value="*"/>
+                    <property name="replyHeaderNames" value="*"/>
+    </bean>
+        
+	<int:transformer input-channel="tcpCompletedFlows" output-channel="tcpPrunedFeaturesFlows" ref="tcpFlowsTransformer" method="transform" />
+	
+	<rabbit:connection-factory id="rabbitConnectionFactory" port="${rabbitmq.port}" host="${rabbitmq.server}" virtual-host="${rabbitmq.virtualhost}" username="${rabbitmq.username}" password="${rabbitmq.password}" /> 
+	<!--  <rabbit:connection-factory id="rabbitConnectionFactory" port="${rabbitmq.port}" host="${rabbitmq.server}" virtual-host="${rabbitmq.virtualhost}" /> -->
+	<!--   <rabbit:connection-factory id="rabbitConnectionFactory" port="#{ T(java.lang.Integer).parseInt({systemProperties['test.target.port']})}" host="#systemProperties['test.target.host']" /> -->
+	<rabbit:admin connection-factory="rabbitConnectionFactory"/> 
+
+	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/> 
+	
+	<!-- used amqpTemplate to send messages on toRabbit channel to rabbitmq -->
+     	<int-amqp:outbound-channel-adapter channel="tcpPrunedFeaturesFlows" 
+                   amqp-template="amqpTemplate" 
+                   exchange-name="${rabbitmq.exchange}" 
+                   routing-key="${rabbitmq.routingkey}"
+                   header-mapper="myHeaderMapper"/> 
+</beans>

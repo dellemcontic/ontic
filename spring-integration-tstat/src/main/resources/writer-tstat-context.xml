@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int = "http://www.springframework.org/schema/integration"
+       xmlns:int-sftp = "http://www.springframework.org/schema/integration/sftp"
+       xmlns:int-syslog="http://www.springframework.org/schema/integration/syslog"
+       xmlns:int-amqp="http://www.springframework.org/schema/integration/amqp"
+       xmlns:hdp="http://www.springframework.org/schema/hadoop"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans 
+       		http://www.springframework.org/schema/beans/spring-beans.xsd 
+       		http://www.springframework.org/schema/integration 
+       		http://www.springframework.org/schema/integration/spring-integration.xsd
+       		http://www.springframework.org/schema/integration/sftp
+       		http://www.springframework.org/schema/integration/sftp/spring-integration-sftp-4.0.xsd
+       		http://www.springframework.org/schema/integration/syslog
+       		http://www.springframework.org/schema/integration/syslog/spring-integration-syslog-4.0.xsd
+       		http://www.springframework.org/schema/hadoop 
+       		http://www.springframework.org/schema/hadoop/spring-hadoop.xsd
+       		http://www.springframework.org/schema/integration/amqp 
+       		http://www.springframework.org/schema/integration/amqp/spring-integration-amqp-4.0.xsd
+       		http://www.springframework.org/schema/rabbit 
+       		http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd
+       		http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- intercept and log every message -->
+    <int:logging-channel-adapter id="logger" level="DEBUG" />
+    <int:wire-tap channel = "logger" />
+    
+    <!-- Default poller -->
+    <int:poller default="true" fixed-delay="50"/>
+    
+    <int:channel id = "messagesFromAmqp"/>
+    
+    <bean id="myHeaderMapper" class="org.springframework.integration.amqp.support.DefaultAmqpHeaderMapper">
+                    <property name="requestHeaderNames" value="*"/>
+                    <property name="replyHeaderNames" value="*"/>
+    </bean>
+    
+    <!-- Placeholder properties -->
+    <context:property-placeholder location="writer-config.properties, /rabbitmq-config.properties, /hadoop-config.properties" />
+    	
+	<rabbit:connection-factory id="rabbitConnectionFactory" port="${rabbitmq.port}" host="${rabbitmq.server}" virtual-host="${rabbitmq.virtualhost}" username="${rabbitmq.username}" password="${rabbitmq.password}" />
+	
+	<rabbit:admin connection-factory="rabbitConnectionFactory"/>
+
+	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/>
+              
+    <int-amqp:inbound-channel-adapter
+                    channel="messagesFromAmqp"
+                    queue-names="${rabbitmq.queue}"
+                    acknowledge-mode="AUTO"
+                    connection-factory="rabbitConnectionFactory"
+                    receive-timeout="1000"
+                    recovery-interval="3000"
+                    header-mapper="myHeaderMapper"/>
+    
+    <!-- <hdp:configuration id="hadoopConfiguration" register-url-handler="false">
+		fs.defaultFS=${hadoop.hdfsurl}
+	</hdp:configuration> -->
+		
+	<!-- <bean id="hadoopFs" class="org.springframework.data.hadoop.fs.FileSystemFactoryBean">
+		<property name="configuration" ref="hadoopConfiguration"/>
+	</bean> -->
+	
+	
+	<bean id="restServiceClassifier" class="com.pivotal.tstat.classification.RestServiceClassifier">
+    	<constructor-arg value="${classifier.url}"/>
+    	
+    </bean>
+                    
+  <!--   <bean id="serviceHdfsWriter" class="com.pivotal.tstat.writer.HdfsMessageWriter">
+    	<constructor-arg ref="hadoopConfiguration"/>
+    	<property name="basePath" value="${writer.basepath}"></property>
+    	<property name="baseFileName" value="${writer.basefilename}"></property>
+    	<property name="fileSuffix" value="${writer.filesuffix}"></property>
+    </bean>
+
+    <bean id="serviceLocalFileSystemWriter" class="com.pivotal.tstat.writer.LocalFileSystemMessageWriter">
+    	<property name="basePath" value="${writer.basepath}"></property>
+    	<property name="baseFileName" value="${writer.basefilename}"></property>
+    	<property name="fileSuffix" value="${writer.filesuffix}"></property>
+    </bean> -->
+    
+    <!--  <bean id="serviceLocalFileSystemClassificationWriter" class="com.pivotal.tstat.writer.LocalFileSystemClassificationWriter">
+    	<property name="predictor" ref="restServiceClassifier"></property>
+    	<property name="basePath" value="${writer.basepath}"></property>
+    	<property name="baseFileName" value="${writer.basefilename}"></property>
+    	<property name="fileSuffix" value="${writer.filesuffix}"></property>
+    </bean> 
+                        
+    <int:service-activator input-channel="messagesFromAmqp" ref="serviceLocalFileSystemPredictionWriter" method="write"/>
+    -->
+    
+    <bean id="classificationTransformer" class="com.pivotal.tstat.classification.ClassificationFlowTransformer">
+    	<property name="classifier" ref="restServiceClassifier"></property>
+     </bean>
+    	
+    <!-- Channel with prediction flows -->
+	<int:channel id = "classificationFlows">
+       	<int:queue capacity="1000"/>
+    </int:channel>
+    
+    <int:transformer input-channel="messagesFromAmqp" output-channel="classificationFlows" ref="classificationTransformer" method="transform" />
+    
+    	
+	<!-- used amqpTemplate to send messages on toRabbit channel to rabbitmq -->
+     	<int-amqp:outbound-channel-adapter channel="classificationFlows" 
+                   amqp-template="amqpTemplate" 
+                   exchange-name="${rabbitmq.exchange}" 
+                   routing-key="${rabbitmq.prediction.routingkey}"
+                   header-mapper="myHeaderMapper"/> 
+</beans>

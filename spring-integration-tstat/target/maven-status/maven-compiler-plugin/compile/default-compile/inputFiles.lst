@@ -1,0 +1,16 @@
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\classification\ClassificationFlowTransformer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\classification\Classification.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\classification\RestServiceClassifier.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\HdfsMessageWriter.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\tcp\RecursiveNewestLeafOnlyDirectoryScanner.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\ingester\MessageTransformer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\tcp\TcpFlowsTransformer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\ingester\IngesterServer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\WriterServer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\LocalFileSystemClassificationWriter.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\AbstractWriter.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\LocalFileSystemMessageWriter.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\writer\Writer.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\tcp\TcpFlow.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\classification\Classifier.java
+C:\Users\alonsj1\git\ontic\spring-integration-tstat\src\main\java\com\pivotal\tstat\tcp\TstatException.java

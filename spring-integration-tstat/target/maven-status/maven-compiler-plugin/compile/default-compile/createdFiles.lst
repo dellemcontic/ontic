@@ -1,0 +1,16 @@
+com\pivotal\tstat\writer\LocalFileSystemClassificationWriter.class
+com\pivotal\tstat\classification\Classifier.class
+com\pivotal\tstat\classification\Classification.class
+com\pivotal\tstat\classification\RestServiceClassifier.class
+com\pivotal\tstat\writer\AbstractWriter.class
+com\pivotal\tstat\ingester\IngesterServer.class
+com\pivotal\tstat\tcp\TcpFlowsTransformer.class
+com\pivotal\tstat\tcp\TcpFlow.class
+com\pivotal\tstat\ingester\MessageTransformer.class
+com\pivotal\tstat\writer\HdfsMessageWriter.class
+com\pivotal\tstat\tcp\RecursiveNewestLeafOnlyDirectoryScanner.class
+com\pivotal\tstat\tcp\TstatException.class
+com\pivotal\tstat\writer\WriterServer.class
+com\pivotal\tstat\classification\ClassificationFlowTransformer.class
+com\pivotal\tstat\writer\LocalFileSystemMessageWriter.class
+com\pivotal\tstat\writer\Writer.class
