@@ -88,7 +88,7 @@ public class PGFMitigationImpl implements PGFMitigation{
 	    			   log.info("Applying policy at location:"+location_db.getGeometry());
 	    			   location_list=location_list+ location_db.getGeometry()+",";
 	    			   //changeNetworkParams(location_db.getRemarks());
-	    			   String routing_location= "actuator."+location_db.getGeometry().toLowerCase()+".routing";
+	    			   String routing_location= "actuator_"+location_db.getGeometry().toLowerCase()+"_routing";
 	    			   int upload_speed=-1;
 	    			   int download_speed =-1;
 	    			 
