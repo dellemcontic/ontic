@@ -14,8 +14,13 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
@@ -24,13 +29,30 @@ import com.jcraft.jsch.Session;
 import com.ontic.pgf.mitigation.interfaces.Plan;
 import com.ontic.pgf.mitigation.interfaces.PlanPolicies;
 import com.ontic.pgf.mitigation.interfaces.Policy;
+
+import com.ontic.pgf.mitigation.db.entity.Location;
+import com.ontic.pgf.mitigation.db.repository.LocationRepository;
+
 import com.jcraft.jsch.ChannelExec;
 
-
+@Configuration
+@EnableJpaRepositories
+@EnableTransactionManagement
 
 public class PGFMitigationImpl implements PGFMitigation{
 	
-	private PGFConfiguration configuration;
+	@Value("${rabbitmq.exchange}")
+	private String rabbit_exchange;
+	@Value("${rabbitmq.routingkey}")
+	private String rabbit_routingkey;
+	
+	private String sshUser;
+	private String sshPass;
+	
+
+	
+	@Autowired
+	LocationRepository locationRepo;
 	
 	@Autowired
     RabbitTemplate rabbitTemplate;
@@ -38,10 +60,9 @@ public class PGFMitigationImpl implements PGFMitigation{
 		
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	public PGFMitigationImpl(PGFConfiguration config )
-	{
-		configuration=config;
-	}
+
+	
+	
 	public  boolean executePlans(List <Plan>plans){
 		Iterator <Plan> itr = plans.iterator();
     	 while(itr.hasNext())
@@ -61,10 +82,24 @@ public class PGFMitigationImpl implements PGFMitigation{
     	    	 {
     			  
     			   String location=loc.next();
-    			   log.info("Applying policy at location:"+configuration.getLocationName(location));
-    			   location_list=location_list+ configuration.getLocationName(location)+",";
-    			   if(location != null)
-    				   changeNetworkParams(location);
+    			   Location location_db=getLocation(location);
+    			   if(location_db!=null)
+    			   {
+	    			   log.info("Applying policy at location:"+location_db.getGeometry());
+	    			   location_list=location_list+ location_db.getGeometry()+",";
+	    			   //changeNetworkParams(location_db.getRemarks());
+	    			   String routing_location= "actuator."+location_db.getGeometry().toLowerCase()+".routing";
+	    			   int upload_speed=-1;
+	    			   int download_speed =-1;
+	    			 
+	    			   String message="{\"upload\":"+upload_speed+",\"download\":"+download_speed+"}";
+	    			   log.info("Mitigation order:"+message);
+	    			   sendMessageMQ(message,routing_location);
+	    			   
+    			   }else
+    			   {
+    				   log.info("Location:"+location+"doesnt exist in DB");
+    			   }
     			 
     	    	 }
     	   }else{
@@ -74,25 +109,47 @@ public class PGFMitigationImpl implements PGFMitigation{
     	 java.util.Date time= new java.util.Date();
       	 String mensaje="Mitigation plan:"+plan.getPlan_id()+". Policy:"+(policies.get(0)).getPolicy()+" .Locations:"+location_list;
       	 String json_message="{\"timestamp\":\""+time.toString()+"\",\"notification\":\""+mensaje+"\"}";
-      	 sendMessageMQ(json_message);
+      	
+      	 sendMessageMQ(json_message,getRabbit_routingkey());
       	 log.info(json_message);
     		   
     	  }
     	 
-    	
-    
-    	 
-		
+  
 		return true;
     	
 	}
 	
-	private  boolean changeNetworkParams(String location) 
+	Location getLocation(String loc)
 	{
 		
-	    String host= configuration.getLocationHost(location);
-	    String user= configuration.getSshUser();
-	    String pass= configuration.getSshPass();
+		List<Location> locations=  locationRepo.findAll();
+	
+		
+		for (int i=0;i<locations.size();i++)
+		{   
+			Location location= locations.get(i);
+		
+			if(location.getTechnology() != null )
+			{
+				
+					if((location.getTechnology()).compareTo(loc)==0)
+					{
+						return location;
+					}
+							
+			} 
+		}
+		
+	  return null;		
+		
+	}
+	private  boolean changeNetworkParams(String ip_location) 
+	{
+		
+	    String host= ip_location;
+	    String user= getSshUser();
+	    String pass= getSshPass();
 	    
 		return cmdExecSSH(host, user, pass, "/sbin/wondershaper clear eth0" );
 		
@@ -207,11 +264,51 @@ public class PGFMitigationImpl implements PGFMitigation{
 	    }
 	
 	    
-	    public void sendMessageMQ(String message)
+	    public void sendMessageMQ(String message,String routing_key)
 	    {
-	    	
-	    	rabbitTemplate.convertAndSend( configuration.getRabbit_exchange(), configuration.getRabbit_routingkey(), message.getBytes());
+	    	rabbitTemplate.convertAndSend( getRabbit_exchange(),routing_key, message.getBytes());
 	   
 	    }
+	    public String getSshUser() {
+			return sshUser;
+		}
 
+
+		public void setSshUser(String sshUser) {
+			this.sshUser = sshUser;
+		}
+
+
+		public String getSshPass() {
+			return sshPass;
+		}
+
+
+
+
+
+
+		public void setSshPass(String sshPass) {
+			this.sshPass = sshPass;
+		}
+
+
+
+		public String getRabbit_exchange() {
+			return rabbit_exchange;
+		}
+
+		public void setRabbit_exchange(String rabbit_exchange) {
+			this.rabbit_exchange = rabbit_exchange;
+		}
+
+		public String getRabbit_routingkey() {
+			return rabbit_routingkey;
+		}
+
+		public void setRabbit_routingkey(String rabbit_routingkey) {
+			this.rabbit_routingkey = rabbit_routingkey;
+		}
+
+	
 }

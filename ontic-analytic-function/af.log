@@ -1,10 +1,249 @@
-2016-06-22 11:34:28 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 9060 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-06-22 11:34:28 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-06-22 11:34:33 - 
+2016-10-11 00:00:38 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-06-22 11:34:33 - Started OnticAnalyticFunctionApplication in 4.573 seconds (JVM running for 5.695)
-2016-06-22 11:34:48 - Analyzing:video_2016_04_02_10_50.tstat
+2016-10-11 00:01:58 - Started OnticAnalyticFunctionApplication in 150.719 seconds (JVM running for 152.087)
+2016-10-11 00:05:07 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22412 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:05:07 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:06:15 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:06:15 - Started OnticAnalyticFunctionApplication in 68.238 seconds (JVM running for 69.213)
+2016-10-11 00:22:38 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 19140 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:22:38 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:23:45 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:23:45 - Started OnticAnalyticFunctionApplication in 67.616 seconds (JVM running for 68.609)
+2016-10-11 00:28:18 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23204 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:28:18 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:29:26 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:29:26 - Started OnticAnalyticFunctionApplication in 67.567 seconds (JVM running for 68.532)
+2016-10-11 00:33:17 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 26280 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:33:17 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:34:25 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:34:25 - Started OnticAnalyticFunctionApplication in 67.503 seconds (JVM running for 68.471)
+2016-10-11 00:36:04 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21928 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:36:04 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:37:12 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:37:12 - Started OnticAnalyticFunctionApplication in 67.791 seconds (JVM running for 68.75)
+2016-10-11 00:43:20 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 15380 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:43:20 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:44:28 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:44:28 - Started OnticAnalyticFunctionApplication in 67.786 seconds (JVM running for 68.745)
+2016-10-11 00:44:47 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23332 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 00:44:47 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 00:45:54 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 00:45:54 - Started OnticAnalyticFunctionApplication in 67.554 seconds (JVM running for 68.494)
+2016-10-11 09:38:21 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18492 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 09:38:21 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 09:38:24 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 09:38:24 - Started OnticAnalyticFunctionApplication in 3.98 seconds (JVM running for 5.041)
+2016-10-11 09:39:10 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13448 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 09:39:10 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 09:39:14 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 09:39:14 - Started OnticAnalyticFunctionApplication in 3.837 seconds (JVM running for 4.481)
+2016-10-11 09:51:33 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 16520 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 09:51:33 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 09:52:13 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 16996 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 09:52:13 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 09:52:52 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 7784 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 09:52:52 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 09:54:18 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 09:54:18 - Started OnticAnalyticFunctionApplication in 86.839 seconds (JVM running for 87.806)
+2016-10-11 10:21:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 5088 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 10:21:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 10:22:18 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18552 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 10:22:18 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 10:22:21 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 10:22:21 - Started OnticAnalyticFunctionApplication in 3.902 seconds (JVM running for 4.628)
+2016-10-11 10:32:22 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 12988 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 10:32:22 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 10:32:26 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 10:32:26 - Started OnticAnalyticFunctionApplication in 3.897 seconds (JVM running for 4.82)
+2016-10-11 10:36:23 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 8004 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 10:36:23 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 10:36:27 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 10:36:27 - Started OnticAnalyticFunctionApplication in 3.793 seconds (JVM running for 4.511)
+2016-10-11 11:46:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 8556 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:46:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:46:18 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:46:18 - Started OnticAnalyticFunctionApplication in 3.91 seconds (JVM running for 4.653)
+2016-10-11 11:47:53 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22824 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:47:53 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:47:57 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:47:57 - Started OnticAnalyticFunctionApplication in 4.078 seconds (JVM running for 4.823)
+2016-10-11 11:50:26 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 5832 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:50:26 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:50:30 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:50:30 - Started OnticAnalyticFunctionApplication in 4.051 seconds (JVM running for 4.788)
+2016-10-11 11:52:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18520 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:52:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:52:18 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:52:18 - Started OnticAnalyticFunctionApplication in 3.97 seconds (JVM running for 4.68)
+2016-10-11 11:54:11 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22568 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:54:11 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:54:15 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:54:15 - Started OnticAnalyticFunctionApplication in 3.923 seconds (JVM running for 4.648)
+2016-10-11 11:54:36 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13580 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 11:54:36 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 11:54:40 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 11:54:40 - Started OnticAnalyticFunctionApplication in 3.941 seconds (JVM running for 4.668)
+2016-10-11 12:13:46 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 26608 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:13:46 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:13:50 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:13:50 - Started OnticAnalyticFunctionApplication in 4.176 seconds (JVM running for 4.944)
+2016-10-11 12:14:46 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23400 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:14:46 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:14:50 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:14:50 - Started OnticAnalyticFunctionApplication in 4.021 seconds (JVM running for 4.751)
+2016-10-11 12:16:45 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 9472 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:16:45 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:16:50 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:16:50 - Started OnticAnalyticFunctionApplication in 4.225 seconds (JVM running for 4.956)
+2016-10-11 12:19:17 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13448 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:19:17 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:19:21 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:19:21 - Started OnticAnalyticFunctionApplication in 4.259 seconds (JVM running for 4.995)
+2016-10-11 12:22:19 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21096 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:22:19 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:22:35 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 19772 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:22:35 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:22:39 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:22:39 - Started OnticAnalyticFunctionApplication in 3.888 seconds (JVM running for 4.616)
+2016-10-11 12:24:13 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 7036 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:24:13 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:24:17 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:24:17 - Started OnticAnalyticFunctionApplication in 4.131 seconds (JVM running for 4.872)
+2016-10-11 12:29:09 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 4408 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
+2016-10-11 12:29:09 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-10-11 12:29:14 - 
+=========================================================
+                                                         
+          Starting Ontic Analytic Function node-                
+                                                         
+=========================================================
+2016-10-11 12:29:14 - Started OnticAnalyticFunctionApplication in 4.419 seconds (JVM running for 4.964)

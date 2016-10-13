@@ -25,6 +25,9 @@ public class DegradationReport implements Serializable {
 	@Column(name="creation_datetime")
 	private Timestamp creationDateTime;
 	
+	@Column(name="start_datetime")
+	private Timestamp startDateTime;
+	
 	@Column(name="end_datetime")
 	private Timestamp endDateTime;
 	
@@ -46,11 +49,18 @@ public class DegradationReport implements Serializable {
 	public void setCreationDateTime(Timestamp creationDateTime) {
 		this.creationDateTime = creationDateTime;
 	}
+ 
+	public Timestamp getStartDateTime() {
+		return startDateTime;
+	}
 
+	public void setStartDateTime(Timestamp startDateTime) {
+		this.startDateTime = startDateTime;
+	}
+	
 	public Timestamp getEndDateTime() {
 		return endDateTime;
 	}
-
 	public void setEndDateTime(Timestamp endDateTime) {
 		this.endDateTime = endDateTime;
 	}

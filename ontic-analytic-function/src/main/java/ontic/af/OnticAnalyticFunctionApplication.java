@@ -24,8 +24,9 @@ public class OnticAnalyticFunctionApplication implements CommandLineRunner{
 	private static final Logger LOGGER = LoggerFactory.getLogger(OnticAnalyticFunctionApplication.class);
 
 		 @Autowired
-	    private ApplicationContext ctx;
-	    
+	     private ApplicationContext ctx;
+		 
+	
 		/**
 		 * Load the Spring Integration Application Context
 		 *
@@ -37,7 +38,9 @@ public class OnticAnalyticFunctionApplication implements CommandLineRunner{
 			app.run(args);
 		}
 
+		@Override
 		public void run(String... args) throws Exception {
+		
 			if (LOGGER.isInfoEnabled()) {
 				LOGGER.info("\n========================================================="
 						  + "\n                                                         "
@@ -45,6 +48,9 @@ public class OnticAnalyticFunctionApplication implements CommandLineRunner{
 						  + "\n                                                         "
 						  + "\n=========================================================" );
 			}
+			
+			
+			
 			
 			
 		}

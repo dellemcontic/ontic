@@ -6,6 +6,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -14,19 +15,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@Component
-@Configuration
+//@Component
+
 @ConfigurationProperties(prefix="PGF")
 public class PGFConfiguration {
      
-	@Value("#{'${PGF.locations_name}'.split(',')}") 
-    private List<String> locations_name;
 	
-	@Value("#{'${PGF.locations}'.split(',')}") 
-    private List<String> locations;
-	
-	@Value("#{'${PGF.hosts}'.split(',')}") 
-	private List<String> hosts;
 	
 	private String sshUser;
 	private String sshPass;
@@ -34,59 +28,6 @@ public class PGFConfiguration {
 	private String rabbit_routingkey;
 	
 	
-    public String getLocationHost(String location){
-     
-    	int location_index= locations.indexOf(location);
-    	return hosts.get(location_index);
-    	
-    }
-    
-    public String getLocationName(String location){
-        
-    	int location_index= locations.indexOf(location);
-    	return locations_name.get(location_index);
-    	
-    }
-    
-   
-    
-  
-	
-
-	public List<String> getLocations() {
-		return locations;
-	}
-
-
-
-
-
-
-	public void setLocations(List<String> locations) {
-		this.locations = locations;
-	}
-
-
-
-
-
-
-	public List<String> getHosts() {
-		return hosts;
-	}
-
-
-
-
-
-
-	public void setHosts(List<String> hosts) {
-		this.hosts = hosts;
-	}
-
-
-
-
 
 
 	public String getSshUser() {
@@ -94,17 +35,9 @@ public class PGFConfiguration {
 	}
 
 
-
-
-
-
 	public void setSshUser(String sshUser) {
 		this.sshUser = sshUser;
 	}
-
-
-
-
 
 
 	public String getSshPass() {
@@ -122,15 +55,6 @@ public class PGFConfiguration {
 
 
 
-
-	public List<String> getLocations_name() {
-		return locations_name;
-	}
-
-	public void setLocations_name(List<String> locations_name) {
-		this.locations_name = locations_name;
-	}
-
 	public String getRabbit_exchange() {
 		return rabbit_exchange;
 	}
@@ -147,11 +71,7 @@ public class PGFConfiguration {
 		this.rabbit_routingkey = rabbit_routingkey;
 	}
 
-	@Bean(name="pGFMitigationBean")
-	 public PGFMitigation pgfMitigationImpl() 
-	 {
-	     return new PGFMitigationImpl(this);
-	 }
+	
 	
    
 }

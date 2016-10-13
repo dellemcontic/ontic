@@ -31,19 +31,16 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
-@EnableAutoConfiguration
+
 
 public class PGFMitigationController {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	 
-	@Autowired
-	private PGFMitigation plansMitigation;
+    @Autowired
+	PGFMitigation plansMitigation;
 	
-	
-	// Mitigation Plan Activation
-	
-    @RequestMapping(value = "/orders", method = RequestMethod.POST)
+	@RequestMapping(value = "/orders", method = RequestMethod.POST)
     public ResponseEntity<?> activation(@RequestBody PlanActivationReq plans, HttpServletRequest request) {
     	
     	log.info("------------------Activation Order------------------------");

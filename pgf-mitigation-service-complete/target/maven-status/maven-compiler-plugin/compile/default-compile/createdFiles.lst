@@ -2,12 +2,13 @@ com\ontic\pgf\mitigation\interfaces\TimingContraints.class
 com\ontic\pgf\mitigation\PGFConfiguration.class
 com\ontic\pgf\mitigation\interfaces\activation\PlanActivationReq.class
 com\ontic\pgf\mitigation\interfaces\Plan.class
-META-INF\spring-configuration-metadata.json
 com\ontic\pgf\mitigation\interfaces\deactivation\PlanDeactivationReq.class
 com\ontic\pgf\mitigation\interfaces\PlanPolicies.class
 com\ontic\pgf\mitigation\interfaces\Parameter.class
 com\ontic\pgf\mitigation\Application.class
 com\ontic\pgf\mitigation\PGFMitigation.class
 com\ontic\pgf\mitigation\interfaces\Policy.class
+com\ontic\pgf\mitigation\db\repository\LocationRepository.class
+com\ontic\pgf\mitigation\db\entity\Location.class
 com\ontic\pgf\mitigation\PGFMitigationController.class
 com\ontic\pgf\mitigation\PGFMitigationImpl.class
