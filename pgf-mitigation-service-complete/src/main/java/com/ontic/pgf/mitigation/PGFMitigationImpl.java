@@ -92,7 +92,7 @@ public class PGFMitigationImpl implements PGFMitigation{
 	    			   int upload_speed=-1;
 	    			   int download_speed =-1;
 	    			 
-	    			   String message="{\"upload\":"+upload_speed+",\"download\":"+download_speed+"}";
+	    			   String message="{\"upload_speed\":"+upload_speed+",\"download_speed\":"+download_speed+"}";
 	    			   log.info("Mitigation order:"+message);
 	    			   sendMessageMQ(message,routing_location);
 	    			   
