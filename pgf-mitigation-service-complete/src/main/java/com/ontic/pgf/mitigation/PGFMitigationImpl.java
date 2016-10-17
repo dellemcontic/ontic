@@ -99,6 +99,7 @@ public class PGFMitigationImpl implements PGFMitigation{
     			   }else
     			   {
     				   log.info("Location:"+location+"doesnt exist in DB");
+    				   return false;
     			   }
     			 
     	    	 }

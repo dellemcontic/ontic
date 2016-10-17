@@ -1,5 +1,4 @@
 com\ontic\pgf\mitigation\interfaces\TimingContraints.class
-com\ontic\pgf\mitigation\PGFConfiguration.class
 com\ontic\pgf\mitigation\interfaces\activation\PlanActivationReq.class
 com\ontic\pgf\mitigation\interfaces\Plan.class
 com\ontic\pgf\mitigation\interfaces\deactivation\PlanDeactivationReq.class

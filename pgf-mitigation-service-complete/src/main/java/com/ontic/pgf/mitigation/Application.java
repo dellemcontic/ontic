@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @Configuration
-@ImportResource("classpath:app-context.xml")
+@ImportResource("classpath:/mitigation-context.xml")
 @EnableAutoConfiguration
 @ComponentScan
 
