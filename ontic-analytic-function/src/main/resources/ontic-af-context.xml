@@ -80,7 +80,11 @@
                     receive-timeout="1000"
                     recovery-interval="3000"
                     header-mapper="myHeaderMapper"/>
-      <bean id="analyticsToDB" class="ontic.af.analytic.AnalyticsToDB"/>
-      <int:service-activator method="" ref="analyticsToDB" input-channel="messagesFromAmqp"/>
+      <bean id="analyticsToDB" class="ontic.af.analytic.AnalyticsToDB">
+       <property name="minutesInBad" value="${af.minutesInBad}"/>
+       </bean>
+        
+      
+      <int:service-activator method="analyze" ref="analyticsToDB" input-channel="messagesFromAmqp"/>
      <jpa:repositories base-package="ontic.af.action.db.repository" />
 </beans>

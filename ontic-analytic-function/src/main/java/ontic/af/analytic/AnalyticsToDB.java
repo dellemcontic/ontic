@@ -9,9 +9,12 @@ import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.MessageListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import ontic.af.OnticAnalyticFunctionApplication;
 import ontic.af.action.db.entity.AffectedKPI;
 import ontic.af.action.db.entity.AffectedKPI_PK;
 import ontic.af.action.db.entity.AffectedLocation;
@@ -42,8 +46,11 @@ import ontic.af.action.db.repository.LocationRepository;
 @EnableTransactionManagement
 
 public class AnalyticsToDB implements AnalyticFunctionIF {
-	
-	private static Hashtable<String, Timestamp> analysis = new Hashtable<String, Timestamp>();
+	private static final Logger LOGGER = LoggerFactory.getLogger(AnalyticsToDB.class);
+	private static Hashtable<String, Timestamp> bad_analysis = new Hashtable<String, Timestamp>();
+	private static Hashtable<String, Timestamp> good_analysis = new Hashtable<String, Timestamp>();
+	private static Hashtable<String, String> report_send = new Hashtable<String, String>();
+    private String minutesInBad;
 	@Autowired
 	DegradationReportRepository degradationReportRepo;
 	
@@ -59,17 +66,29 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	@Autowired
 	LocationRepository locationRepo;
 	
+    
+	
+	public String getMinutesInBad() {
+		return minutesInBad;
+	}
+
+	public void setMinutesInBad(String minutesInBad) {
+		this.minutesInBad = minutesInBad;
+	}
 
 	@Override
 	public void analyze(Message<byte[]> message) { 
 	 
+	try{
+		
+		
 		MessageHeaders headers= message.getHeaders();
-	   long classification_time= (long) headers.get("CLASSIFICATION_TIME");
+	   long classification_time= ((Long) headers.get("CLASSIFICATION_TIME")).longValue();
 	   String classification_input= new String(message.getPayload());
-				
 	   String ip= getClassificationIP(classification_input);
 	   String location=getLocationByIP(ip);
-		
+	   
+	  
 		if(getFlows(classification_input) >= 1)
 		{
 			if(isGoodClassification(classification_input))
@@ -81,32 +100,41 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 			}else
 			{
 								
+				System.out.println(this.getMinutesInBad());
 				Timestamp bad_time= setBadAnalysis(ip, new Timestamp(classification_time));
-				System.out.println(bad_time);
-				Calendar old_bad_time = Calendar.getInstance();
+			    Calendar old_bad_time = Calendar.getInstance();
 				old_bad_time.setTimeInMillis(bad_time.getTime());
-				old_bad_time.add(Calendar.MINUTE,2);
+				old_bad_time.add(Calendar.MINUTE,Integer.parseInt(this.getMinutesInBad()));
 				
 				
 				if(classification_time  >= old_bad_time.getTimeInMillis() )
 				{
 					Calendar report_time = Calendar.getInstance();
-					Timestamp creation_time= new  Timestamp(report_time.getTimeInMillis());
+					Timestamp creation_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
 					report_time.add(Calendar.MINUTE,2);
-					Timestamp start_time= new  Timestamp(report_time.getTimeInMillis());
+					Timestamp start_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
 					report_time.add(Calendar.MINUTE,28);
-					Timestamp end_time= new  Timestamp(report_time.getTimeInMillis());
-				    
-					saveReport((UUID.randomUUID()).toString(),creation_time,start_time,end_time,80.0,"video_quoe",location, "Gold");
-					analysis.remove(ip);
-					analysis.put(ip, end_time);
+					Timestamp end_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
+					Random random= new Random();
+					int randomInteger = random.nextInt(10); //(0..10)
+				    double confidence= 0.9+(randomInteger * 0.01);
+				    String report_id=(UUID.randomUUID()).toString();
+					saveReport(report_id,creation_time,start_time,end_time,confidence,"video_qoe",location, "gold");
+					bad_analysis.remove(ip);
+					bad_analysis.put(ip, end_time);
+					report_send.put(ip,report_id);
 				}
 				
 				
 			}
 		}
 		
+	}catch (Exception e)
+	{
+	    e.printStackTrace();
+		LOGGER.error(e.toString());
 		
+	}
 		
 		
 	}
@@ -126,7 +154,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 						
 					if((location.getRemarks()).compareTo(IP)==0)
 					{
-						return location.getTechnology();
+						return location.getId();
 					}
 				}else
 				{
@@ -145,7 +173,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		if(location_no_remarks != null){
 			location_no_remarks.setRemarks(IP);
 			locationRepo.save(location_no_remarks);
-			return location_no_remarks.getTechnology();
+			return location_no_remarks.getId();
 		}else
 			return null;
 	}
@@ -153,14 +181,17 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	
 	private Timestamp setBadAnalysis(String location, Timestamp time)
 	{
-		
-		if(analysis.containsKey(location))
+		if (good_analysis.containsKey(location))
+		{
+			good_analysis.remove(location);
+		}
+		if(bad_analysis.containsKey(location))
 		{
 			
-			return (Timestamp) analysis.get(location);
+			return (Timestamp) bad_analysis.get(location);
 		}else
 		{
-			analysis.put(location, time);
+			bad_analysis.put(location, time);
 			return time;
 		}
 		
@@ -168,9 +199,37 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	
 	private void setGoodAnalysis(String location, Timestamp time)
 	{
-		if(analysis.containsKey(location))
+		if(report_send.containsKey(location))
 		{
-			analysis.remove(location);
+			if(!good_analysis.containsKey(location))
+			{
+				good_analysis.put(location, time);
+				
+			}else
+			{
+				//Comprueba timestamp 
+				Calendar past_good_time = Calendar.getInstance();
+				past_good_time.setTimeInMillis(((Timestamp) good_analysis.get(location)).getTime());
+				past_good_time.add(Calendar.MINUTE,Integer.parseInt(this.getMinutesInBad()));
+				long good_limit_time=past_good_time.getTimeInMillis();
+				long actual_good_time=time.getTime();
+				if(actual_good_time >= good_limit_time )
+				{
+					//Elimina report
+					degradationReportRepo.delete(report_send.get(location));
+					report_send.remove(location);
+					good_analysis.remove(location);
+					bad_analysis.remove(location);
+				}
+				
+			}
+			
+		}else
+		{
+		  if(bad_analysis.containsKey(location))
+		  {
+			  bad_analysis.remove(location);
+		  }
 		}
 	   
 	}
@@ -213,7 +272,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		{
 			return true;
 	    }
-		System.out.println(greenNumber);
+		
 		if(greenNumber < 100)
 		{
 			return false;
@@ -225,11 +284,15 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 	}
 	
+	 private  long toUTC(long timestamp) {
+		    Calendar cal = Calendar.getInstance();
+		    int offset = cal.getTimeZone().getOffset(timestamp);
+		    return timestamp + offset;
+	}
 	
 	private void saveReport(String report_id, Timestamp creationTime, Timestamp startTime, Timestamp endTime, Double confidence,  String affectedKPI_Id, String affectedLocationId, String affectedSegmentationId)
 	{
 		DegradationReport report = new DegradationReport();
-		
 		
 		
 		report.setId(report_id);
@@ -256,8 +319,11 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		AffectedSegmentation_PK affectedSegmentation_PK = new AffectedSegmentation_PK();
 		affectedSegmentation_PK.setSegmentation_id( affectedSegmentationId);
 		affectedSegmentation_PK.setDegradation_report_id(report_id);
+		
+		
 		AffectedSegmentation affectedSegmentation= new AffectedSegmentation();
 		affectedSegmentation.setAffectedSegmentation_PK(affectedSegmentation_PK);
+		affectedSegmentation.setShare(100);
 		saveDegradationReport(report);
 		
 		saveAffected (affectedPKI, affectedLocation, affectedSegmentation);

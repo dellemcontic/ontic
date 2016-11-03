@@ -22,7 +22,7 @@ public class DegradationReport implements Serializable {
 	@javax.persistence.Column(name="id")
 	private String id;
 	
-	@Column(name="creation_datetime")
+	@Column(name="creation_time")
 	private Timestamp creationDateTime;
 	
 	@Column(name="start_datetime")
