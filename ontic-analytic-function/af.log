@@ -1,249 +1,255 @@
-2016-10-11 00:00:38 - 
+2016-11-07 09:47:39 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21724 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 09:47:39 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 09:49:06 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:01:58 - Started OnticAnalyticFunctionApplication in 150.719 seconds (JVM running for 152.087)
-2016-10-11 00:05:07 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22412 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:05:07 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:06:15 - 
+2016-11-07 09:49:06 - Started OnticAnalyticFunctionApplication in 87.45 seconds (JVM running for 88.536)
+2016-11-07 10:25:41 - org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [affected_location_location_id_fkey]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+2016-11-07 11:06:36 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 17620 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:06:36 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:06:54 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:06:15 - Started OnticAnalyticFunctionApplication in 68.238 seconds (JVM running for 69.213)
-2016-10-11 00:22:38 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 19140 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:22:38 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:23:45 - 
+2016-11-07 11:06:54 - Started OnticAnalyticFunctionApplication in 18.452 seconds (JVM running for 19.118)
+2016-11-07 11:07:25 - org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2016-11-07 11:09:30 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 9604 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:09:30 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:09:48 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:23:45 - Started OnticAnalyticFunctionApplication in 67.616 seconds (JVM running for 68.609)
-2016-10-11 00:28:18 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23204 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:28:18 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:29:26 - 
+2016-11-07 11:09:48 - Started OnticAnalyticFunctionApplication in 18.599 seconds (JVM running for 19.24)
+2016-11-07 11:22:30 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 15264 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:22:30 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:22:49 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:29:26 - Started OnticAnalyticFunctionApplication in 67.567 seconds (JVM running for 68.532)
-2016-10-11 00:33:17 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 26280 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:33:17 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:34:25 - 
+2016-11-07 11:22:49 - Started OnticAnalyticFunctionApplication in 18.945 seconds (JVM running for 19.608)
+2016-11-07 11:22:49 - Received good analysis:2016-12-04 12:12:00.215. Cell:Madrid
+2016-11-07 11:38:30 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 14688 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:38:30 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:38:49 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:34:25 - Started OnticAnalyticFunctionApplication in 67.503 seconds (JVM running for 68.471)
-2016-10-11 00:36:04 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21928 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:36:04 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:37:12 - 
+2016-11-07 11:38:49 - Started OnticAnalyticFunctionApplication in 18.75 seconds (JVM running for 19.486)
+2016-11-07 11:38:52 - Good analisys percentage:99
+2016-11-07 11:38:52 - Received good analysis:2016-12-04 12:12:00.509. Cell:Madrid
+2016-11-07 11:39:05 - Good analisys percentage:41
+2016-11-07 11:39:05 - Received good analysis:2016-12-04 12:12:00.785. Cell:Madrid
+2016-11-07 11:39:23 - Good analisys percentage:40
+2016-11-07 11:39:23 - Received good analysis:2016-12-04 12:12:00.474. Cell:Madrid
+2016-11-07 11:39:38 - Good analisys percentage:39
+2016-11-07 11:39:38 - Received BAD analysis:2016-12-04 12:12:00.21. Cell:Madrid
+2016-11-07 11:39:51 - Good analisys percentage:39
+2016-11-07 11:39:51 - Received BAD analysis:2016-12-04 12:13:00.15. Cell:Madrid
+2016-11-07 11:39:57 - Good analisys percentage:39
+2016-11-07 11:39:57 - Received BAD analysis:2016-12-04 12:14:00.413. Cell:Madrid
+2016-11-07 11:40:13 - Good analisys percentage:39
+2016-11-07 11:40:13 - Received BAD analysis:2016-12-04 12:14:00.037. Cell:Madrid
+2016-11-07 11:40:22 - Good analisys percentage:39
+2016-11-07 11:40:22 - Received BAD analysis:2016-12-04 12:15:00.085. Cell:Madrid
+2016-11-07 11:41:02 - Good analisys percentage:39
+2016-11-07 11:41:02 - Received BAD analysis:2016-12-04 12:16:00.922. Cell:Madrid
+2016-11-07 11:41:33 - Good analisys percentage:39
+2016-11-07 11:41:33 - Received BAD analysis:2016-12-04 12:17:00.909. Cell:Madrid
+2016-11-07 11:47:46 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21076 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:47:46 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:48:05 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:37:12 - Started OnticAnalyticFunctionApplication in 67.791 seconds (JVM running for 68.75)
-2016-10-11 00:43:20 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 15380 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:43:20 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:44:28 - 
+2016-11-07 11:48:05 - Started OnticAnalyticFunctionApplication in 19.012 seconds (JVM running for 19.748)
+2016-11-07 11:48:05 - Good analisys percentage:39
+2016-11-07 11:48:05 - Received BAD analysis:2016-12-04 12:17:00.324. Cell:Madrid
+2016-11-07 11:49:07 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 3056 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:49:07 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:49:26 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:44:28 - Started OnticAnalyticFunctionApplication in 67.786 seconds (JVM running for 68.745)
-2016-10-11 00:44:47 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23332 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 00:44:47 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 00:45:54 - 
+2016-11-07 11:49:26 - Started OnticAnalyticFunctionApplication in 19.047 seconds (JVM running for 19.712)
+2016-11-07 11:49:26 - Good analisys percentage:39
+2016-11-07 11:49:26 - Received BAD analysis:2016-12-04 12:17:00.88. Cell:Madrid
+2016-11-07 11:50:03 - Good analisys percentage:39
+2016-11-07 11:50:03 - Received BAD analysis:2016-12-04 12:18:00.511. Cell:Madrid
+2016-11-07 11:50:14 - Good analisys percentage:39
+2016-11-07 11:50:14 - Received BAD analysis:2016-12-04 12:19:00.168. Cell:Madrid
+2016-11-07 11:50:25 - Good analisys percentage:39
+2016-11-07 11:50:25 - Received BAD analysis:2016-12-04 12:20:00.038. Cell:Madrid
+2016-11-07 11:50:34 - Good analisys percentage:39
+2016-11-07 11:50:34 - Received BAD analysis:2016-12-04 12:21:00.917. Cell:Madrid
+2016-11-07 11:53:20 - Good analisys percentage:39
+2016-11-07 11:53:20 - Received BAD analysis:2016-12-04 12:22:00.462. Cell:Madrid
+2016-11-07 11:55:16 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23700 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:55:16 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:55:35 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 00:45:54 - Started OnticAnalyticFunctionApplication in 67.554 seconds (JVM running for 68.494)
-2016-10-11 09:38:21 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18492 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 09:38:21 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 09:38:24 - 
+2016-11-07 11:55:35 - Started OnticAnalyticFunctionApplication in 18.905 seconds (JVM running for 19.564)
+2016-11-07 11:55:35 - Good analisys percentage:39
+2016-11-07 11:55:35 - Received BAD analysis:2016-12-03 12:22:00.302. Cell:Madrid
+2016-11-07 11:56:11 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23208 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 11:56:11 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 11:56:30 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 09:38:24 - Started OnticAnalyticFunctionApplication in 3.98 seconds (JVM running for 5.041)
-2016-10-11 09:39:10 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13448 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 09:39:10 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 09:39:14 - 
+2016-11-07 11:56:30 - Started OnticAnalyticFunctionApplication in 18.895 seconds (JVM running for 19.553)
+2016-11-07 11:56:30 - Good analisys percentage:39
+2016-11-07 11:56:30 - Received BAD analysis:2016-11-04 12:22:00.004. Cell:Madrid
+2016-11-07 11:56:40 - Good analisys percentage:39
+2016-11-07 11:56:40 - Received BAD analysis:2016-11-04 12:24:00.324. Cell:Madrid
+2016-11-07 11:56:47 - Good analisys percentage:39
+2016-11-07 11:56:47 - Received BAD analysis:2016-11-04 12:25:00.561. Cell:Madrid
+2016-11-07 11:57:05 - Good analisys percentage:39
+2016-11-07 11:57:05 - Received BAD analysis:2016-11-04 12:26:00.443. Cell:Madrid
+2016-11-07 11:57:21 - Good analisys percentage:39
+2016-11-07 11:57:21 - Received BAD analysis:2016-11-04 12:27:00.656. Cell:Madrid
+2016-11-07 11:58:46 - Good analisys percentage:100
+2016-11-07 11:58:46 - Received good analysis:2016-11-04 12:27:00.911. Cell:Madrid
+2016-11-07 11:58:56 - Good analisys percentage:100
+2016-11-07 11:58:56 - Received good analysis:2016-11-04 12:27:00.72. Cell:Madrid
+2016-11-07 11:59:10 - Good analisys percentage:20
+2016-11-07 11:59:10 - Received BAD analysis:2016-11-04 12:30:00.495. Cell:Madrid
+2016-11-07 12:54:00 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22216 (C:\Users\alonsj1\git\ontic\ontic-analytic-function\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\ontic-analytic-function)
+2016-11-07 12:54:00 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 12:54:20 - 
 =========================================================
                                                          
           Starting Ontic Analytic Function node-                
                                                          
 =========================================================
-2016-10-11 09:39:14 - Started OnticAnalyticFunctionApplication in 3.837 seconds (JVM running for 4.481)
-2016-10-11 09:51:33 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 16520 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 09:51:33 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 09:52:13 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 16996 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 09:52:13 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 09:52:52 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 7784 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 09:52:52 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 09:54:18 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 09:54:18 - Started OnticAnalyticFunctionApplication in 86.839 seconds (JVM running for 87.806)
-2016-10-11 10:21:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 5088 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 10:21:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 10:22:18 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18552 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 10:22:18 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 10:22:21 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 10:22:21 - Started OnticAnalyticFunctionApplication in 3.902 seconds (JVM running for 4.628)
-2016-10-11 10:32:22 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 12988 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 10:32:22 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 10:32:26 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 10:32:26 - Started OnticAnalyticFunctionApplication in 3.897 seconds (JVM running for 4.82)
-2016-10-11 10:36:23 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 8004 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 10:36:23 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 10:36:27 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 10:36:27 - Started OnticAnalyticFunctionApplication in 3.793 seconds (JVM running for 4.511)
-2016-10-11 11:46:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 8556 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:46:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:46:18 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:46:18 - Started OnticAnalyticFunctionApplication in 3.91 seconds (JVM running for 4.653)
-2016-10-11 11:47:53 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22824 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:47:53 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:47:57 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:47:57 - Started OnticAnalyticFunctionApplication in 4.078 seconds (JVM running for 4.823)
-2016-10-11 11:50:26 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 5832 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:50:26 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:50:30 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:50:30 - Started OnticAnalyticFunctionApplication in 4.051 seconds (JVM running for 4.788)
-2016-10-11 11:52:14 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 18520 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:52:14 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:52:18 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:52:18 - Started OnticAnalyticFunctionApplication in 3.97 seconds (JVM running for 4.68)
-2016-10-11 11:54:11 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 22568 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:54:11 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:54:15 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:54:15 - Started OnticAnalyticFunctionApplication in 3.923 seconds (JVM running for 4.648)
-2016-10-11 11:54:36 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13580 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 11:54:36 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 11:54:40 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 11:54:40 - Started OnticAnalyticFunctionApplication in 3.941 seconds (JVM running for 4.668)
-2016-10-11 12:13:46 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 26608 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:13:46 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:13:50 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:13:50 - Started OnticAnalyticFunctionApplication in 4.176 seconds (JVM running for 4.944)
-2016-10-11 12:14:46 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 23400 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:14:46 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:14:50 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:14:50 - Started OnticAnalyticFunctionApplication in 4.021 seconds (JVM running for 4.751)
-2016-10-11 12:16:45 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 9472 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:16:45 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:16:50 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:16:50 - Started OnticAnalyticFunctionApplication in 4.225 seconds (JVM running for 4.956)
-2016-10-11 12:19:17 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 13448 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:19:17 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:19:21 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:19:21 - Started OnticAnalyticFunctionApplication in 4.259 seconds (JVM running for 4.995)
-2016-10-11 12:22:19 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 21096 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:22:19 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:22:35 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 19772 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:22:35 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:22:39 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:22:39 - Started OnticAnalyticFunctionApplication in 3.888 seconds (JVM running for 4.616)
-2016-10-11 12:24:13 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 7036 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:24:13 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:24:17 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:24:17 - Started OnticAnalyticFunctionApplication in 4.131 seconds (JVM running for 4.872)
-2016-10-11 12:29:09 - Starting OnticAnalyticFunctionApplication on SPGSALONSJ1L1C with PID 4408 (C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function\target\classes started by alonsj1 in C:\Eclipse\spring-tool-suite-3.7.3\workspace\ontic-analytic-function)
-2016-10-11 12:29:09 - Running with Spring Boot v1.2.4.RELEASE, Spring v4.3.0.RELEASE
-2016-10-11 12:29:14 - 
-=========================================================
-                                                         
-          Starting Ontic Analytic Function node-                
-                                                         
-=========================================================
-2016-10-11 12:29:14 - Started OnticAnalyticFunctionApplication in 4.419 seconds (JVM running for 4.964)
+2016-11-07 12:54:20 - Started OnticAnalyticFunctionApplication in 19.32 seconds (JVM running for 20.125)
+2016-11-07 12:54:36 - Good analisys percentage:100
+2016-11-07 12:54:36 - Received good analysis:2016-11-04 12:05:00.462. Cell:Madrid
+2016-11-07 12:54:46 - Good analisys percentage:30
+2016-11-07 12:54:46 - Received BAD analysis:2016-11-04 12:05:00.036. Cell:Madrid
+2016-11-07 12:54:46 - Time to remediation :2016-11-04 12:07:00.036
+2016-11-07 12:55:10 - Good analisys percentage:30
+2016-11-07 12:55:10 - Received BAD analysis:2016-11-04 12:06:00.918. Cell:Madrid
+2016-11-07 12:55:10 - Time to remediation :2016-11-04 12:07:00.036
+2016-11-07 12:55:26 - Good analisys percentage:30
+2016-11-07 12:55:26 - Received BAD analysis:2016-11-04 12:07:00.495. Cell:Madrid
+2016-11-07 12:55:26 - Time to remediation :2016-11-04 12:07:00.036
+2016-11-07 12:55:31 - Good analisys percentage:30
+2016-11-07 12:55:31 - Received BAD analysis:2016-11-04 12:07:00.166. Cell:Madrid
+2016-11-07 12:55:31 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:45 - Good analisys percentage:30
+2016-11-07 12:55:45 - Received BAD analysis:2016-11-04 12:07:00.737. Cell:Madrid
+2016-11-07 12:55:45 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:47 - Good analisys percentage:30
+2016-11-07 12:55:47 - Received BAD analysis:2016-11-04 12:07:00.101. Cell:Madrid
+2016-11-07 12:55:47 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:47 - Good analisys percentage:30
+2016-11-07 12:55:47 - Received BAD analysis:2016-11-04 12:07:00.918. Cell:Madrid
+2016-11-07 12:55:47 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:48 - Good analisys percentage:30
+2016-11-07 12:55:48 - Received BAD analysis:2016-11-04 12:07:00.571. Cell:Madrid
+2016-11-07 12:55:48 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:49 - Good analisys percentage:30
+2016-11-07 12:55:49 - Received BAD analysis:2016-11-04 12:07:00.243. Cell:Madrid
+2016-11-07 12:55:49 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:49 - Good analisys percentage:30
+2016-11-07 12:55:49 - Received BAD analysis:2016-11-04 12:07:00.886. Cell:Madrid
+2016-11-07 12:55:49 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:50 - Good analisys percentage:30
+2016-11-07 12:55:50 - Received BAD analysis:2016-11-04 12:07:00.534. Cell:Madrid
+2016-11-07 12:55:50 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:51 - Good analisys percentage:30
+2016-11-07 12:55:51 - Received BAD analysis:2016-11-04 12:07:00.091. Cell:Madrid
+2016-11-07 12:55:51 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:51 - Good analisys percentage:30
+2016-11-07 12:55:51 - Received BAD analysis:2016-11-04 12:07:00.668. Cell:Madrid
+2016-11-07 12:55:51 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:52 - Good analisys percentage:30
+2016-11-07 12:55:52 - Received BAD analysis:2016-11-04 12:07:00.186. Cell:Madrid
+2016-11-07 12:55:52 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:52 - Good analisys percentage:30
+2016-11-07 12:55:52 - Received BAD analysis:2016-11-04 12:07:00.508. Cell:Madrid
+2016-11-07 12:55:52 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:52 - Good analisys percentage:30
+2016-11-07 12:55:52 - Received BAD analysis:2016-11-04 12:07:00.705. Cell:Madrid
+2016-11-07 12:55:52 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:52 - Good analisys percentage:30
+2016-11-07 12:55:52 - Received BAD analysis:2016-11-04 12:07:00.904. Cell:Madrid
+2016-11-07 12:55:52 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:53 - Good analisys percentage:30
+2016-11-07 12:55:53 - Received BAD analysis:2016-11-04 12:07:00.101. Cell:Madrid
+2016-11-07 12:55:53 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:53 - Good analisys percentage:30
+2016-11-07 12:55:53 - Received BAD analysis:2016-11-04 12:07:00.295. Cell:Madrid
+2016-11-07 12:55:53 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:53 - Good analisys percentage:30
+2016-11-07 12:55:53 - Received BAD analysis:2016-11-04 12:07:00.502. Cell:Madrid
+2016-11-07 12:55:53 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:53 - Good analisys percentage:30
+2016-11-07 12:55:53 - Received BAD analysis:2016-11-04 12:07:00.707. Cell:Madrid
+2016-11-07 12:55:53 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:53 - Good analisys percentage:30
+2016-11-07 12:55:53 - Received BAD analysis:2016-11-04 12:07:00.91. Cell:Madrid
+2016-11-07 12:55:53 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:54 - Good analisys percentage:30
+2016-11-07 12:55:54 - Received BAD analysis:2016-11-04 12:07:00.089. Cell:Madrid
+2016-11-07 12:55:54 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:54 - Good analisys percentage:30
+2016-11-07 12:55:54 - Received BAD analysis:2016-11-04 12:07:00.271. Cell:Madrid
+2016-11-07 12:55:54 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:54 - Good analisys percentage:30
+2016-11-07 12:55:54 - Received BAD analysis:2016-11-04 12:07:00.463. Cell:Madrid
+2016-11-07 12:55:54 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:54 - Good analisys percentage:30
+2016-11-07 12:55:54 - Received BAD analysis:2016-11-04 12:07:00.671. Cell:Madrid
+2016-11-07 12:55:54 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:54 - Good analisys percentage:30
+2016-11-07 12:55:54 - Received BAD analysis:2016-11-04 12:07:00.883. Cell:Madrid
+2016-11-07 12:55:54 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:55 - Good analisys percentage:30
+2016-11-07 12:55:55 - Received BAD analysis:2016-11-04 12:07:00.064. Cell:Madrid
+2016-11-07 12:55:55 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:55 - Good analisys percentage:30
+2016-11-07 12:55:55 - Received BAD analysis:2016-11-04 12:07:00.284. Cell:Madrid
+2016-11-07 12:55:55 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:55 - Good analisys percentage:30
+2016-11-07 12:55:55 - Received BAD analysis:2016-11-04 12:07:00.486. Cell:Madrid
+2016-11-07 12:55:55 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:55 - Good analisys percentage:30
+2016-11-07 12:55:55 - Received BAD analysis:2016-11-04 12:07:00.686. Cell:Madrid
+2016-11-07 12:55:55 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:55 - Good analisys percentage:30
+2016-11-07 12:55:55 - Received BAD analysis:2016-11-04 12:07:00.904. Cell:Madrid
+2016-11-07 12:55:55 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:56 - Good analisys percentage:30
+2016-11-07 12:55:56 - Received BAD analysis:2016-11-04 12:07:00.118. Cell:Madrid
+2016-11-07 12:55:56 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:56 - Good analisys percentage:30
+2016-11-07 12:55:56 - Received BAD analysis:2016-11-04 12:07:00.286. Cell:Madrid
+2016-11-07 12:55:56 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:56 - Good analisys percentage:30
+2016-11-07 12:55:56 - Received BAD analysis:2016-11-04 12:07:00.485. Cell:Madrid
+2016-11-07 12:55:56 - Time to remediation :2016-11-07 14:27:26.496
+2016-11-07 12:55:56 - Good analisys percentage:30
+2016-11-07 12:55:56 - Received BAD analysis:2016-11-04 12:07:00.694. Cell:Madrid
+2016-11-07 12:55:56 - Time to remediation :2016-11-07 14:27:26.496

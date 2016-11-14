@@ -26,6 +26,7 @@ import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import com.ontic.pgf.mitigation.interfaces.Parameter;
 import com.ontic.pgf.mitigation.interfaces.Plan;
 import com.ontic.pgf.mitigation.interfaces.PlanPolicies;
 import com.ontic.pgf.mitigation.interfaces.Policy;
@@ -64,6 +65,7 @@ public class PGFMitigationImpl implements PGFMitigation{
 	
 	
 	public  boolean executePlans(List <Plan>plans){
+	 try {
 		Iterator <Plan> itr = plans.iterator();
     	 while(itr.hasNext())
     	 {
@@ -73,7 +75,7 @@ public class PGFMitigationImpl implements PGFMitigation{
     	   List<String> locations=plan.getLocations();
     	   PlanPolicies plan_policies= plan.getPlan();
     	   List<Policy> policies = plan_policies.getPolicies();
-    	   String location_list="";
+ 
     	   if(locations != null)
     	   {
     		   Iterator <String> loc = locations.iterator();
@@ -82,46 +84,60 @@ public class PGFMitigationImpl implements PGFMitigation{
     	    	 {
     			  
     			   String location=loc.next();
-    			   Location location_db=getLocation(location);
-    			   if(location_db!=null)
+    			   String cell_name=getLocation(location);
+    			   if(cell_name!=null)
     			   {
-	    			   log.info("Applying policy at location:"+location_db.getGeometry());
-	    			   location_list=location_list+ location_db.getGeometry()+",";
-	    			   //changeNetworkParams(location_db.getRemarks());
-	    			   String routing_location= "actuator_"+location_db.getGeometry().toLowerCase()+"_routing";
-	    			   int upload_speed=-1;
-	    			   int download_speed =-1;
-	    			 
-	    			   String message="{\"upload_speed\":"+upload_speed+",\"download_speed\":"+download_speed+"}";
-	    			   log.info("Mitigation order:"+message);
-	    			   sendMessageMQ(message,routing_location);
-	    			   
-    			   }else
+    				   Iterator <Policy> policies_iterator = policies.iterator();
+    				   while(policies_iterator.hasNext())
+    				   {
+    					   Policy policy= policies_iterator.next();
+    					   String policy_name=policy.getPolicy();
+    					   String policy_group=policy.getGroup();
+    					   Parameter policy_param =policy.getParameters();
+    					   
+    					   if(policy_name.compareTo("bandwidth_throttling")==0)
+    					   {
+    						   log.info("Applying policy "+ policy_name+" to group "+policy_group+" in cell "+ cell_name);
+    						   int limit =policy_param.getLimit();
+    						   String routing_location= "actuator_"+policy_group+"_"+cell_name.toLowerCase();
+    						   int upload_speed=limit;
+    		    			   int download_speed =limit;
+    		    			   String message="{\"upload_speed\":"+upload_speed+",\"download_speed\":"+download_speed+"}";
+    		    			   log.info("Actuator:"+routing_location+".Mitigation order:"+message);
+    		    			   sendMessageMQ(message,routing_location+"_routing");
+    		    			   // Web message
+    		    			   java.util.Date time= new java.util.Date();
+    		    		       String mensaje="Mitigation plan:"+plan.getPlan_id()+". Cell:"+cell_name+" .Group:"+policy_group+" .Policy:"+policy_name+" Limit:"+limit;
+    		    		       String json_message="{\"timestamp\":\""+time.toString()+"\",\"notification\":\""+mensaje+"\"}";
+    		    		       sendMessageMQ(json_message,getRabbit_routingkey());
+    		    		       log.info("Web message: "+json_message);
+    						   
+    					   }
+    					   
+    				   }
+				   }else
     			   {
-    				   log.info("Location:"+location+"doesnt exist in DB");
+    				   log.error("Cell name:"+cell_name+"doesnt exist in DB");
     				   return false;
     			   }
     			 
     	    	 }
     	   }else{
-    		   log.info("Locations is null");
+    		   log.error("Locations is null");
     	   }
-    	 location_list=location_list.substring(0, location_list.lastIndexOf(","));
-    	 java.util.Date time= new java.util.Date();
-      	 String mensaje="Mitigation plan:"+plan.getPlan_id()+". Policy:"+(policies.get(0)).getPolicy()+" .Locations:"+location_list;
-      	 String json_message="{\"timestamp\":\""+time.toString()+"\",\"notification\":\""+mensaje+"\"}";
-      	
-      	 sendMessageMQ(json_message,getRabbit_routingkey());
-      	 log.info(json_message);
-    		   
+    	
     	  }
+	 }catch (Exception e)
+	 {
+		 log.error(e.toString());
+	 }
     	 
   
 		return true;
     	
 	}
 	
-	Location getLocation(String loc)
+	String getLocation(String loc)
 	{
 		
 		List<Location> locations=  locationRepo.findAll();
@@ -136,7 +152,7 @@ public class PGFMitigationImpl implements PGFMitigation{
 				
 					if((location.getTechnology()).compareTo(loc)==0)
 					{
-						return location;
+						return location.getCell_name();
 					}
 							
 			} 
@@ -267,7 +283,12 @@ public class PGFMitigationImpl implements PGFMitigation{
 	    
 	    public void sendMessageMQ(String message,String routing_key)
 	    {
-	    	rabbitTemplate.convertAndSend( getRabbit_exchange(),routing_key, message.getBytes());
+	    	try{
+	    		rabbitTemplate.convertAndSend( getRabbit_exchange(),routing_key, message.getBytes());
+	    	}catch (Exception e)
+	    	{
+	    		log.error(e.toString());
+	    	}
 	   
 	    }
 	    public String getSshUser() {

@@ -91,7 +91,7 @@
 		
 	   
 	   
-			<!-- <dependency>
+		<!-- <dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-client</artifactId>
 			<version>2.6.0</version> 
@@ -116,21 +116,24 @@
     <version>4.3.0.RELEASE</version>
 </dependency>
      
-	<dependency>
+	<!-- <dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-hadoop</artifactId>
 			<version>1.0.2.RELEASE</version>
 		</dependency> 
+   -->
 		<dependency>
 			<groupId>org.springframework.integration</groupId>
 			<artifactId>spring-integration-file</artifactId>
 			<version>4.0.2.RELEASE</version>
 		</dependency>
-		<dependency>
+		<!--
+		 <dependency>
     		<groupId>commons-io</groupId>
     		<artifactId>commons-io</artifactId>
     		<version>2.4</version>
 		</dependency>
+		-->
 		<dependency>
 		    <groupId>com.jcraft</groupId>
 		    <artifactId>jsch</artifactId>
@@ -147,10 +150,9 @@
     
    
   
-
-
-    <properties>
+     <properties>
         <java.version>1.8</java.version>
+        <tomcat.version>8.5.5</tomcat.version>
     </properties>
 
 
@@ -172,23 +174,21 @@
             <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-assembly-plugin</artifactId>
-      			<configuration>
-        			<descriptorRefs>
-          			<descriptorRef>jar-with-dependencies</descriptorRef>
-        			</descriptorRefs>
-      			</configuration>
-            <executions>
-            <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-            <goal>single</goal>
-            </goals>
-            </execution>
-            </executions>
+               <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>process-sources</phase>
+
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+
+                            <configuration>
+                                <outputDirectory>${targetdirectory}</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
             </plugin>
         
         </plugins>

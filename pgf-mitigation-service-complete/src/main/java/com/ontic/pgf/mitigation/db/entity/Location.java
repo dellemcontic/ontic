@@ -25,14 +25,20 @@ public class Location implements Serializable {
 	@Column(name="technology")
 	private String technology;
 	
-	@Column(name="geometry")
-	private String geometry;
+	@Column(name="segmentation_id")
+	private String segmentation_id;
 	
-	@Column(name="radius")
-	private int radius;
+	@Column(name="cell_name")
+	private String cell_name;
 	
-	@Column(name="remarks")
-	private String remarks;
+	@Column(name="cell_id")
+	private String cell_id;
+	
+	@Column(name="ip")
+	private String ip;
+	
+	@Column(name="weight")
+	private int weight;
 
 	public String getId() {
 		return id;
@@ -50,29 +56,47 @@ public class Location implements Serializable {
 		this.technology = technology;
 	}
 
-	public String getGeometry() {
-		return geometry;
+	public String getSegmentation_id() {
+		return segmentation_id;
 	}
 
-	public void setGeometry(String geometry) {
-		this.geometry = geometry;
+	public void setSegmentation_id(String segmentation_id) {
+		this.segmentation_id = segmentation_id;
 	}
 
-	public int getRadius() {
-		return radius;
+	public String getCell_name() {
+		return cell_name;
 	}
 
-	public void setRadius(int radius) {
-		this.radius = radius;
+	public void setCell_name(String cell_name) {
+		this.cell_name = cell_name;
 	}
 
-	public String getRemarks() {
-		return remarks;
+	public String getCell_id() {
+		return cell_id;
 	}
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setCell_id(String cell_id) {
+		this.cell_id = cell_id;
 	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	
 
 	
 	

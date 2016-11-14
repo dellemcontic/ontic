@@ -21,7 +21,9 @@ public class AffectedLocation implements Serializable {
 
 	@EmbeddedId
 	private AffectedLocation_PK affectedLocation_PK;
-
+	@Column(name="cell_id")
+	private String cell_id;
+	
 	public AffectedLocation_PK getAffectedLocation_PK() {
 		return affectedLocation_PK;
 	}
@@ -29,12 +31,14 @@ public class AffectedLocation implements Serializable {
 	public void setAffectedLocation_PK(AffectedLocation_PK affectedLocation_PK) {
 		this.affectedLocation_PK = affectedLocation_PK;
 	}
-	
-	
+
+	public String getCell_id() {
+		return cell_id;
+	}
+
+	public void setCell_id(String cell_id) {
+		this.cell_id = cell_id;
+	}
 
 	
-	
-	
-	
-
 }

@@ -47,11 +47,10 @@ public class OnticAnalyticFunctionApplication implements CommandLineRunner{
 						  + "\n          Starting Ontic Analytic Function node-                "
 						  + "\n                                                         "
 						  + "\n=========================================================" );
+			
 			}
 			
 			
-			
-			
-			
 		}
+
 }

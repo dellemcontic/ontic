@@ -11135,3 +11135,940 @@ Caused by: java.io.FileNotFoundException: class path resource [mitigation-contex
 2016-10-17 13:12:53.049  INFO 9780 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
 2016-10-17 13:12:53.080  INFO 9780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
 2016-10-17 13:12:53.236  INFO 9780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 11:49:20.040  INFO 2040 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 2040 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-04 11:49:20.056 DEBUG 2040 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-04 11:49:20.056  INFO 2040 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-04 11:49:20.103  INFO 2040 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f03482: startup date [Fri Nov 04 11:49:20 CET 2016]; root of context hierarchy
+2016-11-04 11:49:21.108  INFO 2040 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-04 11:49:21.359  INFO 2040 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-04 11:49:21.483  INFO 2040 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 11:49:21.499  INFO 2040 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-04 11:49:21.686  INFO 2040 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-04 11:49:21.702  INFO 2040 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-04 11:49:21.702  INFO 2040 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-04 11:49:21.811  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d57bb816] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.873  INFO 2040 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 11:49:21.873  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.873  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.889  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.920  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#79fd6f95' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.920  INFO 2040 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-04 11:49:21.920  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:21.920  INFO 2040 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:49:22.341  INFO 2040 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-04 11:49:22.342  INFO 2040 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-04 11:49:22.342  INFO 2040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-04 11:49:22.530  INFO 2040 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-04 11:49:22.530  INFO 2040 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2427 ms
+2016-11-04 11:49:22.701  INFO 2040 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-04 11:49:22.701  INFO 2040 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-04 11:49:22.701  INFO 2040 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-04 11:49:22.701  INFO 2040 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-04 11:49:22.701  INFO 2040 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-04 11:49:23.810  INFO 2040 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-04 11:49:23.889  INFO 2040 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-04 11:49:23.982  INFO 2040 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-04 11:49:23.982  INFO 2040 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-04 11:49:23.982  INFO 2040 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-04 11:49:24.029  INFO 2040 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-04 11:49:24.216  INFO 2040 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 11:49:39.602  INFO 2040 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-11-04 11:49:39.602  INFO 2040 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@259287ac
+2016-11-04 11:49:39.977  INFO 2040 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-04 11:49:40.118  INFO 2040 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-04 11:49:40.695  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f03482: startup date [Fri Nov 04 11:49:20 CET 2016]; root of context hierarchy
+2016-11-04 11:49:40.774  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-04 11:49:40.774  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 11:49:40.774  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 11:49:40.774  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-04 11:49:40.774  INFO 2040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-04 11:49:40.805  INFO 2040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:49:40.805  INFO 2040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:49:40.837  INFO 2040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:49:41.149  INFO 2040 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-04 11:49:41.165  INFO 2040 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-04 11:49:41.165  INFO 2040 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-04 11:49:41.196  INFO 2040 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-04 11:49:41.196  INFO 2040 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-04 11:49:41.196  INFO 2040 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-04 11:49:41.196  INFO 2040 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-04 11:49:41.196  INFO 2040 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-04 11:49:41.274  INFO 2040 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-04 11:49:41.274  INFO 2040 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 21.688 seconds (JVM running for 22.749)
+2016-11-04 11:51:56.581  INFO 2040 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-04 11:51:56.581  INFO 2040 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-04 11:51:56.601  INFO 2040 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2016-11-04 11:51:56.704  INFO 2040 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ------------------Activation Order------------------------
+2016-11-04 11:51:56.705  INFO 2040 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Received plan activation with timestamp:1474452851818
+2016-11-04 11:51:56.722 DEBUG 2040 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : {
+  "timestamp" : 1474452851818,
+  "plans" : [ {
+    "plan_id" : "58DAA963ECA96",
+    "plan" : {
+      "plan_ref" : "plan1",
+      "policies" : [ {
+        "group" : "silver_domestic",
+        "policy" : "bandwidth_tdottling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      }, {
+        "group" : "bronze_young",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      } ]
+    },
+    "timing_constraints" : {
+      "activation_time" : 1474772917578,
+      "deactivation_time" : 1474882917578,
+      "recurrence" : null,
+      "time_frames" : null
+    },
+    "locations" : [ "132909340" ]
+  } ]
+}
+2016-11-04 11:51:56.723  INFO 2040 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$599427e5 : Executing plan_id:58DAA963ECA96
+2016-11-04 11:51:56.904  INFO 2040 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$599427e5 : Applying policy bandwidth_throttling to group bronze_young in cell Madrid
+2016-11-04 11:51:56.905  INFO 2040 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$599427e5 : Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 11:52:17.959 ERROR 2040 --- [http-nio-8083-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection timed out: connect] with root cause
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_45]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_45]
+	at com.rabbitmq.client.impl.FrameHandlerFactory.create(FrameHandlerFactory.java:32) ~[amqp-client-3.3.1.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:588) ~[amqp-client-3.3.1.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:624) ~[amqp-client-3.3.1.jar:na]
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:191) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:359) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils$1.createConnection(ConnectionFactoryUtils.java:80) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.doGetTransactionalResourceHolder(ConnectionFactoryUtils.java:130) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.getTransactionalResourceHolder(ConnectionFactoryUtils.java:67) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.connection.RabbitAccessor.getTransactionalResourceHolder(RabbitAccessor.java:106) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:826) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:820) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.send(RabbitTemplate.java:375) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:415) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.convertAndSend(RabbitTemplate.java:411) ~[spring-rabbit-1.3.3.RELEASE.jar:na]
+	at com.ontic.pgf.mitigation.PGFMitigationImpl.sendMessageMQ(PGFMitigationImpl.java:281) ~[classes/:na]
+	at com.ontic.pgf.mitigation.PGFMitigationImpl.executePlans(PGFMitigationImpl.java:106) ~[classes/:na]
+	at com.ontic.pgf.mitigation.PGFMitigationController.activation(PGFMitigationController.java:58) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_45]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_45]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
+
+2016-11-04 11:53:23.626  INFO 7780 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 7780 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-04 11:53:23.629 DEBUG 7780 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-04 11:53:23.629  INFO 7780 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-04 11:53:23.679  INFO 7780 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 11:53:23 CET 2016]; root of context hierarchy
+2016-11-04 11:53:24.481  INFO 7780 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-04 11:53:24.627  INFO 7780 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-04 11:53:24.767  INFO 7780 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 11:53:24.770  INFO 7780 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-04 11:53:24.984  INFO 7780 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-04 11:53:24.998  INFO 7780 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-04 11:53:25.001  INFO 7780 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-04 11:53:25.093  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a5439fed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.148  INFO 7780 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 11:53:25.148  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.148  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.152  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.185  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#eca6a74' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.186  INFO 7780 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-04 11:53:25.186  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.187  INFO 7780 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 11:53:25.572  INFO 7780 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-04 11:53:25.583  INFO 7780 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-04 11:53:25.584  INFO 7780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-04 11:53:25.804  INFO 7780 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-04 11:53:25.805  INFO 7780 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2130 ms
+2016-11-04 11:53:25.938  INFO 7780 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-04 11:53:25.942  INFO 7780 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-04 11:53:25.943  INFO 7780 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-04 11:53:25.943  INFO 7780 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-04 11:53:25.943  INFO 7780 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-04 11:53:26.999  INFO 7780 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-04 11:53:27.099  INFO 7780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-04 11:53:27.170  INFO 7780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-04 11:53:27.171  INFO 7780 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-04 11:53:27.173  INFO 7780 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-04 11:53:27.213  INFO 7780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-04 11:53:27.361  INFO 7780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 11:53:42.712  INFO 7780 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-11-04 11:53:42.716  INFO 7780 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@10e9a5fe
+2016-11-04 11:53:43.012  INFO 7780 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-04 11:53:43.133  INFO 7780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-04 11:53:43.705  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 11:53:23 CET 2016]; root of context hierarchy
+2016-11-04 11:53:43.772  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 11:53:43.773  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 11:53:43.773  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-04 11:53:43.775  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-04 11:53:43.776  INFO 7780 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-04 11:53:43.810  INFO 7780 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:53:43.811  INFO 7780 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:53:43.856  INFO 7780 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 11:53:44.158  INFO 7780 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-04 11:53:44.167  INFO 7780 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-04 11:53:44.169  INFO 7780 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-04 11:53:44.190  INFO 7780 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-04 11:53:44.191  INFO 7780 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-04 11:53:44.192  INFO 7780 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-04 11:53:44.193  INFO 7780 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-04 11:53:44.193  INFO 7780 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-04 11:53:44.251  INFO 7780 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-04 11:53:44.256  INFO 7780 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 20.975 seconds (JVM running for 21.564)
+2016-11-04 11:53:48.821  INFO 7780 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-04 11:53:48.821  INFO 7780 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-04 11:53:48.839  INFO 7780 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2016-11-04 11:53:48.926  INFO 7780 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ------------------Activation Order------------------------
+2016-11-04 11:53:48.926  INFO 7780 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Received plan activation with timestamp:1474452851818
+2016-11-04 11:53:48.943 DEBUG 7780 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : {
+  "timestamp" : 1474452851818,
+  "plans" : [ {
+    "plan_id" : "58DAA963ECA96",
+    "plan" : {
+      "plan_ref" : "plan1",
+      "policies" : [ {
+        "group" : "silver_domestic",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      }, {
+        "group" : "bronze_young",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      } ]
+    },
+    "timing_constraints" : {
+      "activation_time" : 1474772917578,
+      "deactivation_time" : 1474882917578,
+      "recurrence" : null,
+      "time_frames" : null
+    },
+    "locations" : [ "132909340" ]
+  } ]
+}
+2016-11-04 11:53:48.943  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Executing plan_id:58DAA963ECA96
+2016-11-04 11:53:49.107  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group silver_domestic in cell Madrid
+2016-11-04 11:53:49.107  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 11:53:49.306  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 11:53:49 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:silver_domestic .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 11:53:49.306  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group bronze_young in cell Madrid
+2016-11-04 11:53:49.307  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 11:53:49.307  INFO 7780 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 11:53:49 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:bronze_young .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 11:53:49.308  INFO 7780 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Return:(302); Created. Order ID:91VJJS9HHVBDPF8JO
+2016-11-04 11:53:49.308  INFO 7780 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ----------------------------------------------------
+2016-11-04 12:06:47.453  INFO 11720 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 11720 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-04 12:06:47.453 DEBUG 11720 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-04 12:06:47.453  INFO 11720 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-04 12:06:47.499  INFO 11720 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:06:47 CET 2016]; root of context hierarchy
+2016-11-04 12:06:48.264  INFO 11720 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-04 12:06:48.405  INFO 11720 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-04 12:06:48.530  INFO 11720 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:06:48.530  INFO 11720 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-04 12:06:48.780  INFO 11720 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-04 12:06:48.811  INFO 11720 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-04 12:06:48.811  INFO 11720 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-04 12:06:48.936  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a5439fed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:48.982  INFO 11720 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:06:48.982  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:48.982  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:48.998  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:49.029  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#eca6a74' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:49.029  INFO 11720 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-04 12:06:49.029  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:49.029  INFO 11720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:06:49.388  INFO 11720 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-04 12:06:49.389  INFO 11720 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-04 12:06:49.389  INFO 11720 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-04 12:06:49.561  INFO 11720 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-04 12:06:49.561  INFO 11720 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2062 ms
+2016-11-04 12:06:49.701  INFO 11720 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-04 12:06:49.701  INFO 11720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-04 12:06:49.701  INFO 11720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-04 12:06:49.701  INFO 11720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-04 12:06:49.701  INFO 11720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-04 12:06:50.810  INFO 11720 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:06:50.920  INFO 11720 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-04 12:06:50.982  INFO 11720 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-04 12:06:50.982  INFO 11720 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-04 12:06:50.982  INFO 11720 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-04 12:06:51.029  INFO 11720 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-04 12:06:51.169  INFO 11720 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 12:07:06.516  INFO 11720 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-11-04 12:07:06.516  INFO 11720 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@10e9a5fe
+2016-11-04 12:07:06.815  INFO 11720 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-04 12:07:06.910  INFO 11720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:07:07.494  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:06:47 CET 2016]; root of context hierarchy
+2016-11-04 12:07:07.541  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:07:07.541  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:07:07.541  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-04 12:07:07.542  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-04 12:07:07.542  INFO 11720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-04 12:07:07.573  INFO 11720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:07:07.573  INFO 11720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:07:07.620  INFO 11720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:07:07.854  INFO 11720 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-04 12:07:07.854  INFO 11720 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-04 12:07:07.869  INFO 11720 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-04 12:07:07.885  INFO 11720 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-04 12:07:07.885  INFO 11720 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-04 12:07:07.885  INFO 11720 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-04 12:07:07.885  INFO 11720 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-04 12:07:07.885  INFO 11720 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-04 12:07:07.963  INFO 11720 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-04 12:07:07.963  INFO 11720 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 20.869 seconds (JVM running for 21.46)
+2016-11-04 12:07:14.472  INFO 11720 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-04 12:07:14.472  INFO 11720 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-04 12:07:14.493  INFO 11720 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2016-11-04 12:07:14.627  INFO 11720 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ------------------Activation Order------------------------
+2016-11-04 12:07:14.627  INFO 11720 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Received plan activation with timestamp:1474452851818
+2016-11-04 12:07:14.643 DEBUG 11720 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : {
+  "timestamp" : 1474452851818,
+  "plans" : [ {
+    "plan_id" : "58DAA963ECA96",
+    "plan" : {
+      "plan_ref" : "plan1",
+      "policies" : [ {
+        "group" : "silver_domestic",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      }, {
+        "group" : "bronze_young",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      } ]
+    },
+    "timing_constraints" : {
+      "activation_time" : 1474772917578,
+      "deactivation_time" : 1474882917578,
+      "recurrence" : null,
+      "time_frames" : null
+    },
+    "locations" : [ "132909340" ]
+  } ]
+}
+2016-11-04 12:07:14.643  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Executing plan_id:58DAA963ECA96
+2016-11-04 12:07:14.820  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group silver_domestic in cell Madrid
+2016-11-04 12:07:14.820  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Actuator:actuator_silver_domestic_Madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 12:07:15 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:silver_domestic .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group bronze_young in cell Madrid
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Actuator:actuator_bronze_young_Madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 12:07:15 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:bronze_young .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Return:(302); Created. Order ID:QXF43GSLER5TB1XPG
+2016-11-04 12:07:15.025  INFO 11720 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ----------------------------------------------------
+2016-11-04 12:13:49.600  INFO 15460 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 15460 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-04 12:13:49.600 DEBUG 15460 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-04 12:13:49.600  INFO 15460 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-04 12:13:49.648  INFO 15460 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:13:49 CET 2016]; root of context hierarchy
+2016-11-04 12:13:50.429  INFO 15460 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-04 12:13:50.616  INFO 15460 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-04 12:13:50.727  INFO 15460 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:13:50.727  INFO 15460 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-04 12:13:50.961  INFO 15460 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-04 12:13:50.961  INFO 15460 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-04 12:13:50.977  INFO 15460 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-04 12:13:51.071  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a5439fed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.149  INFO 15460 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:13:51.149  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.149  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.149  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.180  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#eca6a74' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.180  INFO 15460 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-04 12:13:51.195  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.195  INFO 15460 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:13:51.557  INFO 15460 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-04 12:13:51.572  INFO 15460 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-04 12:13:51.572  INFO 15460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-04 12:13:51.704  INFO 15460 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-04 12:13:51.704  INFO 15460 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2056 ms
+2016-11-04 12:13:51.865  INFO 15460 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-04 12:13:51.880  INFO 15460 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-04 12:13:51.880  INFO 15460 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-04 12:13:51.880  INFO 15460 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-04 12:13:51.880  INFO 15460 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-04 12:13:52.944  INFO 15460 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:13:52.959  INFO 15460 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-04 12:13:53.069  INFO 15460 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-04 12:13:53.069  INFO 15460 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-04 12:13:53.069  INFO 15460 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-04 12:13:53.101  INFO 15460 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-04 12:13:53.226  INFO 15460 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 12:14:08.621  INFO 15460 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-11-04 12:14:08.636  INFO 15460 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@10e9a5fe
+2016-11-04 12:14:08.896  INFO 15460 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-04 12:14:09.021  INFO 15460 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:14:09.535  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:13:49 CET 2016]; root of context hierarchy
+2016-11-04 12:14:09.597  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:14:09.597  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:14:09.597  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-04 12:14:09.597  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-04 12:14:09.597  INFO 15460 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-04 12:14:09.613  INFO 15460 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:14:09.613  INFO 15460 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:14:09.659  INFO 15460 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:14:09.953  INFO 15460 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-04 12:14:09.953  INFO 15460 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-04 12:14:09.953  INFO 15460 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-04 12:14:09.984  INFO 15460 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-04 12:14:09.984  INFO 15460 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-04 12:14:09.984  INFO 15460 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-04 12:14:09.984  INFO 15460 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-04 12:14:09.984  INFO 15460 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-04 12:14:10.047  INFO 15460 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-04 12:14:10.047  INFO 15460 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 20.807 seconds (JVM running for 21.463)
+2016-11-04 12:14:15.776  INFO 15460 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-04 12:14:15.777  INFO 15460 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-04 12:14:15.820  INFO 15460 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 43 ms
+2016-11-04 12:14:15.898  INFO 15460 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ------------------Activation Order------------------------
+2016-11-04 12:14:15.898  INFO 15460 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Received plan activation with timestamp:1474452851818
+2016-11-04 12:14:15.899 DEBUG 15460 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : {
+  "timestamp" : 1474452851818,
+  "plans" : [ {
+    "plan_id" : "58DAA963ECA96",
+    "plan" : {
+      "plan_ref" : "plan1",
+      "policies" : [ {
+        "group" : "silver_domestic",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      }, {
+        "group" : "bronze_young",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      } ]
+    },
+    "timing_constraints" : {
+      "activation_time" : 1474772917578,
+      "deactivation_time" : 1474882917578,
+      "recurrence" : null,
+      "time_frames" : null
+    },
+    "locations" : [ "132909340" ]
+  } ]
+}
+2016-11-04 12:14:15.899  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Executing plan_id:58DAA963ECA96
+2016-11-04 12:14:16.086  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group silver_domestic in cell Madrid
+2016-11-04 12:14:16.086  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Actuator:actuator_silver_domestic_madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 12:14:16 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:silver_domestic .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Applying policy bandwidth_throttling to group bronze_young in cell Madrid
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : Actuator:actuator_bronze_young_madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$295c0fbc : {"timestamp":"Fri Nov 04 12:14:16 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:bronze_young .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Return:(302); Created. Order ID:9JCVDJWDDC6RSBL5L
+2016-11-04 12:14:16.258  INFO 15460 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ----------------------------------------------------
+2016-11-04 12:21:34.999  INFO 24544 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 24544 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-04 12:21:34.999 DEBUG 24544 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-04 12:21:34.999  INFO 24544 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-04 12:21:35.193  INFO 24544 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:21:35 CET 2016]; root of context hierarchy
+2016-11-04 12:21:36.023  INFO 24544 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-04 12:21:36.163  INFO 24544 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-04 12:21:36.287  INFO 24544 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:21:36.287  INFO 24544 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-04 12:21:36.525  INFO 24544 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-04 12:21:36.526  INFO 24544 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-04 12:21:36.526  INFO 24544 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-04 12:21:36.635  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4d8720cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.713  INFO 24544 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-04 12:21:36.713  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.713  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.713  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.730  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#10643593' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.730  INFO 24544 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-04 12:21:36.730  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:36.730  INFO 24544 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-04 12:21:37.121  INFO 24544 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-04 12:21:37.121  INFO 24544 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-04 12:21:37.121  INFO 24544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-04 12:21:37.323  INFO 24544 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-04 12:21:37.323  INFO 24544 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2133 ms
+2016-11-04 12:21:37.495  INFO 24544 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-04 12:21:37.495  INFO 24544 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-04 12:21:37.495  INFO 24544 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-04 12:21:37.495  INFO 24544 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-04 12:21:37.495  INFO 24544 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-04 12:21:38.585  INFO 24544 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:21:38.695  INFO 24544 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-04 12:21:38.758  INFO 24544 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-04 12:21:38.758  INFO 24544 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-04 12:21:38.758  INFO 24544 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-04 12:21:38.789  INFO 24544 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-04 12:21:38.932  INFO 24544 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-04 12:21:54.279  INFO 24544 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-11-04 12:21:54.280  INFO 24544 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@14457a95
+2016-11-04 12:21:54.563  INFO 24544 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-04 12:21:54.673  INFO 24544 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-04 12:21:55.194  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@185a6e9: startup date [Fri Nov 04 12:21:35 CET 2016]; root of context hierarchy
+2016-11-04 12:21:55.255  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:21:55.255  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-04 12:21:55.255  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-04 12:21:55.255  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-04 12:21:55.255  INFO 24544 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-04 12:21:55.287  INFO 24544 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:21:55.287  INFO 24544 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:21:55.303  INFO 24544 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-04 12:21:55.600  INFO 24544 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-04 12:21:55.600  INFO 24544 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-04 12:21:55.600  INFO 24544 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-04 12:21:55.615  INFO 24544 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-04 12:21:55.615  INFO 24544 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-04 12:21:55.615  INFO 24544 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-04 12:21:55.615  INFO 24544 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-04 12:21:55.615  INFO 24544 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-04 12:21:55.678  INFO 24544 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-04 12:21:55.678  INFO 24544 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 21.134 seconds (JVM running for 21.754)
+2016-11-04 12:22:05.767  INFO 24544 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-04 12:22:05.768  INFO 24544 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-04 12:22:05.786  INFO 24544 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2016-11-04 12:22:05.885  INFO 24544 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ------------------Activation Order------------------------
+2016-11-04 12:22:05.885  INFO 24544 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Received plan activation with timestamp:1474452851818
+2016-11-04 12:22:05.924 DEBUG 24544 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : {
+  "timestamp" : 1474452851818,
+  "plans" : [ {
+    "plan_id" : "58DAA963ECA96",
+    "plan" : {
+      "plan_ref" : "plan1",
+      "policies" : [ {
+        "group" : "silver_domestic",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      }, {
+        "group" : "bronze_young",
+        "policy" : "bandwidth_throttling",
+        "parameters" : {
+          "limit" : 1000,
+          "services" : null
+        }
+      } ]
+    },
+    "timing_constraints" : {
+      "activation_time" : 1474772917578,
+      "deactivation_time" : 1474882917578,
+      "recurrence" : null,
+      "time_frames" : null
+    },
+    "locations" : [ "132909340" ]
+  } ]
+}
+2016-11-04 12:22:05.924  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Executing plan_id:58DAA963ECA96
+2016-11-04 12:22:06.096  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Applying policy bandwidth_throttling to group silver_domestic in cell Madrid
+2016-11-04 12:22:06.096  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Actuator:actuator_silver_domestic_madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Web message: {"timestamp":"Fri Nov 04 12:22:06 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:silver_domestic .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Applying policy bandwidth_throttling to group bronze_young in cell Madrid
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Actuator:actuator_bronze_young_madrid.Mitigation order:{"upload_speed":1000,"download_speed":1000}
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] ionImpl$$EnhancerBySpringCGLIB$$d19f909a : Web message: {"timestamp":"Fri Nov 04 12:22:06 CET 2016","notification":"Mitigation plan:58DAA963ECA96. Cell:Madrid .Group:bronze_young .Policy:bandwidth_throttling Limit:1000"}
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : Return:(302); Created. Order ID:JJXFKU929WVN9KAQ8
+2016-11-04 12:22:06.287  INFO 24544 --- [http-nio-8083-exec-1] c.o.p.m.PGFMitigationController          : ----------------------------------------------------
+2016-11-07 18:54:52.453  INFO 3952 --- [main] com.ontic.pgf.mitigation.Application     : Starting Application on SPGSALONSJ1L1C with PID 3952 (C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete\target\classes started by alonsj1 in C:\Users\alonsj1\git\ontic\pgf-mitigation-service-complete)
+2016-11-07 18:54:52.453 DEBUG 3952 --- [main] com.ontic.pgf.mitigation.Application     : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.0.RELEASE
+2016-11-07 18:54:52.453  INFO 3952 --- [main] com.ontic.pgf.mitigation.Application     : No active profile set, falling back to default profiles: default
+2016-11-07 18:54:52.500  INFO 3952 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f03482: startup date [Mon Nov 07 18:54:52 CET 2016]; root of context hierarchy
+2016-11-07 18:54:53.359  INFO 3952 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [mitigation-context.xml]
+2016-11-07 18:54:53.546  INFO 3952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'locationRepository' with a different definition: replacing [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2016-11-07 18:54:53.657  INFO 3952 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-07 18:54:53.672  INFO 3952 --- [main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2016-11-07 18:54:53.859  INFO 3952 --- [main] o.s.b.f.c.PropertyPlaceholderConfigurer  : Loading properties file from class path resource [application.properties]
+2016-11-07 18:54:53.875  INFO 3952 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2016-11-07 18:54:53.875  INFO 3952 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2016-11-07 18:54:53.984  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f97b22f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.062  INFO 3952 --- [main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/alonsj1/.m2/repository/org/springframework/integration/spring-integration-core/4.0.0.RELEASE/spring-integration-core-4.0.0.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2016-11-07 18:54:54.062  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.062  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.062  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.093  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#49c675f0' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.109  INFO 3952 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2016-11-07 18:54:54.109  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.109  INFO 3952 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-07 18:54:54.468  INFO 3952 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8083 (http)
+2016-11-07 18:54:54.483  INFO 3952 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-07 18:54:54.483  INFO 3952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-07 18:54:54.655  INFO 3952 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-07 18:54:54.655  INFO 3952 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2155 ms
+2016-11-07 18:54:54.812  INFO 3952 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-07 18:54:54.812  INFO 3952 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-07 18:54:54.812  INFO 3952 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-07 18:54:54.812  INFO 3952 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-07 18:54:54.812  INFO 3952 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-07 18:54:56.123 ERROR 3952 --- [main] o.a.tomcat.jdbc.pool.ConnectionPool      : Unable to create initial connections of pool.
+
+org.postgresql.util.PSQLException: Connection to 104.199.34.13:7432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:239) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:718) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:650) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:468) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:143) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) [tomcat-jdbc-8.5.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:139) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getDefaultDdlAuto(JpaProperties.java:224) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getOrDeduceDdlAuto(JpaProperties.java:212) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getAdditionalProperties(JpaProperties.java:188) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.access$000(JpaProperties.java:129) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.getHibernateProperties(JpaProperties.java:126) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.getVendorProperties(HibernateJpaAutoConfiguration.java:103) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.entityManagerFactory(JpaBaseConfiguration.java:125) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration$$EnhancerBySpringCGLIB$$63018715.CGLIB$entityManagerFactory$4(<generated>) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration$$EnhancerBySpringCGLIB$$63018715$$FastClassBySpringCGLIB$$cab19b1f.invoke(<generated>) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) [spring-core-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:356) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration$$EnhancerBySpringCGLIB$$63018715.entityManagerFactory(<generated>) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_45]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1023) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:851) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at com.ontic.pgf.mitigation.Application.main(Application.java:26) [classes/:na]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_45]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_45]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:121) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	... 57 common frames omitted
+
+2016-11-07 18:54:56.124  INFO 3952 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-07 18:54:56.139  INFO 3952 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-07 18:54:56.424  INFO 3952 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-07 18:54:56.424  INFO 3952 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-07 18:54:56.424  INFO 3952 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-07 18:54:56.456  INFO 3952 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-07 18:54:57.719 ERROR 3952 --- [main] o.a.tomcat.jdbc.pool.ConnectionPool      : Unable to create initial connections of pool.
+
+org.postgresql.util.PSQLException: Connection to 104.199.34.13:7432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:239) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:718) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:650) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:468) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:143) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) [tomcat-jdbc-8.5.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:88) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.handleTypes(MetadataBuildingProcess.java:352) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:111) [hibernate-core-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) [hibernate-entitymanager-5.0.11.Final.jar:5.0.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) [hibernate-entitymanager-5.0.11.Final.jar:5.0.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) [spring-orm-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) [spring-orm-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:373) [spring-orm-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:362) [spring-orm-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1642) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1579) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:545) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1076) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:851) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at com.ontic.pgf.mitigation.Application.main(Application.java:26) [classes/:na]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_45]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_45]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:121) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	... 55 common frames omitted
+
+2016-11-07 18:54:57.735  WARN 3952 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : Connection to 104.199.34.13:7432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2016-11-07 18:54:57.766  INFO 3952 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-11-07 18:54:57.767  INFO 3952 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2016-11-07 18:54:57.767  INFO 3952 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@4a2bf50f
+2016-11-07 18:54:58.079  INFO 3952 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2016-11-07 18:54:58.188  INFO 3952 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-07 18:54:59.421 ERROR 3952 --- [main] o.a.tomcat.jdbc.pool.ConnectionPool      : Unable to create initial connections of pool.
+
+org.postgresql.util.PSQLException: Connection to 104.199.34.13:7432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:239) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203) ~[tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:718) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:650) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:468) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:143) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) [tomcat-jdbc-8.5.5.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) [tomcat-jdbc-8.5.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342) [spring-jdbc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:139) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getDefaultDdlAuto(JpaProperties.java:224) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getOrDeduceDdlAuto(JpaProperties.java:212) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.getAdditionalProperties(JpaProperties.java:188) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties$Hibernate.access$000(JpaProperties.java:129) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.getHibernateProperties(JpaProperties.java:126) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.isInitializingDatabase(DataSourceInitializedPublisher.java:80) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:68) [spring-boot-autoconfigure-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:422) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.postProcessObjectFromFactoryBean(AbstractAutowireCapableBeanFactory.java:1728) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:113) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1600) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:254) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:634) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:448) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1023) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:299) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1486) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1231) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751) [spring-beans-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) [spring-context-4.3.0.RELEASE.jar:4.3.0.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.1.RELEASE.jar:1.4.1.RELEASE]
+	at com.ontic.pgf.mitigation.Application.main(Application.java:26) [classes/:na]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_45]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_45]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_45]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_45]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:121) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	... 88 common frames omitted
+
+2016-11-07 18:54:59.921  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f03482: startup date [Mon Nov 07 18:54:52 CET 2016]; root of context hierarchy
+2016-11-07 18:54:59.983  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders/{order_id}/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-07 18:54:59.983  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/plans/{plan_id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.deactivation(java.lang.String,com.ontic.pgf.mitigation.interfaces.deactivation.PlanDeactivationReq)
+2016-11-07 18:54:59.983  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/orders],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.ontic.pgf.mitigation.PGFMitigationController.activation(com.ontic.pgf.mitigation.interfaces.activation.PlanActivationReq,javax.servlet.http.HttpServletRequest)
+2016-11-07 18:54:59.983  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-07 18:54:59.983  INFO 3952 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-07 18:55:00.014  INFO 3952 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-07 18:55:00.014  INFO 3952 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-07 18:55:00.046  INFO 3952 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-07 18:55:00.358  INFO 3952 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-07 18:55:00.358  INFO 3952 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'errorChannel' has been autodetected for JMX exposure
+2016-11-07 18:55:00.358  INFO 3952 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'errorChannel': registering with JMX server as MBean [org.springframework.integration.channel:name=errorChannel,type=PublishSubscribeChannel]
+2016-11-07 18:55:00.389  INFO 3952 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2016-11-07 18:55:00.389  INFO 3952 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2016-11-07 18:55:00.389  INFO 3952 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-07 18:55:00.389  INFO 3952 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 1 subscriber(s).
+2016-11-07 18:55:00.389  INFO 3952 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2016-11-07 18:55:00.482  INFO 3952 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8083 (http)
+2016-11-07 18:55:00.483  INFO 3952 --- [main] com.ontic.pgf.mitigation.Application     : Started Application in 8.374 seconds (JVM running for 9.135)
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f03482: startup date [Mon Nov 07 18:54:52 CET 2016]; root of context hierarchy
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:8083.errorChannel' has 0 subscriber(s).
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483648
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2016-11-07 18:55:32.022  INFO 3952 --- [RMI TCP Connection(2)-192.168.1.35] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'

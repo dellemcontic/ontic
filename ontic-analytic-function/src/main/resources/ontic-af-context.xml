@@ -82,6 +82,7 @@
                     header-mapper="myHeaderMapper"/>
       <bean id="analyticsToDB" class="ontic.af.analytic.AnalyticsToDB">
        <property name="minutesInBad" value="${af.minutesInBad}"/>
+        <property name="threshold" value="${af.threshold}"/>
        </bean>
         
       

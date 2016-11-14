@@ -51,6 +51,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	private static Hashtable<String, Timestamp> good_analysis = new Hashtable<String, Timestamp>();
 	private static Hashtable<String, String> report_send = new Hashtable<String, String>();
     private String minutesInBad;
+    private String threshold;
 	@Autowired
 	DegradationReportRepository degradationReportRepo;
 	
@@ -75,6 +76,15 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	public void setMinutesInBad(String minutesInBad) {
 		this.minutesInBad = minutesInBad;
 	}
+		
+
+	public String getThreshold() {
+		return threshold;
+	}
+
+	public void setThreshold(String threshold) {
+		this.threshold = threshold;
+	}
 
 	@Override
 	public void analyze(Message<byte[]> message) { 
@@ -82,32 +92,32 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	try{
 		
 		
-		MessageHeaders headers= message.getHeaders();
-	   long classification_time= ((Long) headers.get("CLASSIFICATION_TIME")).longValue();
+		 
 	   String classification_input= new String(message.getPayload());
-	   String ip= getClassificationIP(classification_input);
-	   String location=getLocationByIP(ip);
+	   Timestamp classification_time  = getClassificationTime(classification_input);
+	   String cell= getClassificationCell(classification_input);
 	   
-	  
+	 
+	   
 		if(getFlows(classification_input) >= 1)
 		{
 			if(isGoodClassification(classification_input))
 			{
-			
-				setGoodAnalysis(ip, new Timestamp(classification_time));
+				LOGGER.info("Received good analysis:"+classification_time+". Cell:"+cell);
+				setGoodAnalysis(cell, classification_time);
 				
 				
 			}else
 			{
 								
-				System.out.println(this.getMinutesInBad());
-				Timestamp bad_time= setBadAnalysis(ip, new Timestamp(classification_time));
+				LOGGER.info("Received BAD analysis:"+classification_time+". Cell:"+cell);
+				Timestamp bad_time= setBadAnalysis(cell, classification_time);
 			    Calendar old_bad_time = Calendar.getInstance();
 				old_bad_time.setTimeInMillis(bad_time.getTime());
 				old_bad_time.add(Calendar.MINUTE,Integer.parseInt(this.getMinutesInBad()));
 				
-				
-				if(classification_time  >= old_bad_time.getTimeInMillis() )
+				LOGGER.info("Time to remediation :"+new Timestamp(old_bad_time.getTimeInMillis()));
+				if(classification_time.getTime()  >= old_bad_time.getTimeInMillis() )
 				{
 					Calendar report_time = Calendar.getInstance();
 					Timestamp creation_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
@@ -119,10 +129,10 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 					int randomInteger = random.nextInt(10); //(0..10)
 				    double confidence= 0.9+(randomInteger * 0.01);
 				    String report_id=(UUID.randomUUID()).toString();
-					saveReport(report_id,creation_time,start_time,end_time,confidence,"video_qoe",location, "gold");
-					bad_analysis.remove(ip);
-					bad_analysis.put(ip, end_time);
-					report_send.put(ip,report_id);
+					saveReport(report_id,creation_time,start_time,end_time,confidence,"video_qoe",cell);
+					bad_analysis.remove(cell);
+					bad_analysis.put(cell, end_time);
+					report_send.put(cell,report_id);
 				}
 				
 				
@@ -139,44 +149,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 	}
 	
-	private String getLocationByIP(String IP)
-	{
-		List<Location> locations=  locationRepo.findAll();
-		Location location_no_remarks=null;
-		
-		for (int i=0;i<locations.size();i++)
-		{   Location location= locations.get(i);
-		
-			if(location.getRemarks() != null )
-			{
-				if( location.getRemarks().compareTo("") !=0)
-				{
-						
-					if((location.getRemarks()).compareTo(IP)==0)
-					{
-						return location.getId();
-					}
-				}else
-				{
-					location_no_remarks=location;
-				}
-				
-					
-			} else
-			{
-			
-				location_no_remarks=location;
-			}
-		}
-		
-		
-		if(location_no_remarks != null){
-			location_no_remarks.setRemarks(IP);
-			locationRepo.save(location_no_remarks);
-			return location_no_remarks.getId();
-		}else
-			return null;
-	}
+
 	
 	
 	private Timestamp setBadAnalysis(String location, Timestamp time)
@@ -234,12 +207,25 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	   
 	}
 	
-	
+	private Timestamp getClassificationTime(String classification){
+		int time_index=classification.indexOf("timestamp\":");
+		String time_value =classification.substring(time_index+12,classification.indexOf(",\"workstations\"")-1);
+		String[] tiempo = time_value.split("_");
+		Calendar out= Calendar.getInstance();
+		out.set(Integer.parseInt(tiempo[0]),
+		 Integer.parseInt(tiempo[1])-1,
+		 Integer.parseInt(tiempo[2]),
+		 Integer.parseInt(tiempo[3]),
+		 Integer.parseInt(tiempo[4]),0);
+		
+		return new Timestamp(out.getTimeInMillis());
+	}
 	private int  getFlows(String classification)
 	{
-		int flow_index=classification.indexOf("flows\":");
-		String flow_value =classification.substring(flow_index+7,classification.indexOf(",\"red\""));
+		int flow_index=classification.indexOf("weighted_Total\":");
 		
+		String flow_value =classification.substring(flow_index+16,classification.lastIndexOf("}"));
+				
 		int flowNumber=0;
 		try{
 			flowNumber=Integer.parseInt(flow_value);
@@ -252,28 +238,34 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 		
 	}
-	private String  getClassificationIP(String classification)
+	private String  getClassificationCell(String classification)
 	{
-		int ip_index=classification.indexOf("ip\":");
-		String ip_value =classification.substring(ip_index+5,classification.indexOf(",\"flows\"")-1);
-		return ip_value;
+		int cell_index=classification.indexOf("name\":");
+		String cell_value =classification.substring(cell_index+7,classification.indexOf(",\"id\"")-1);
+		return cell_value;
 		
 		
 		
 	}
 	private boolean isGoodClassification(String classification)
 	{
-		int green_index=classification.indexOf("green\":");
-		String green_per_cent =classification.substring(green_index+7,classification.indexOf(",\"orange\""));
+		int green_index=classification.indexOf("weighted_Green\":");
+		String green_per_cent =classification.substring(green_index+16,classification.indexOf(",\"weighted_Medium\""));
+		LOGGER.info("Good analisys percentage:"+green_per_cent);
 		int greenNumber=0;
+		int umbral=0;
 		try{
+			
 			greenNumber=Integer.parseInt(green_per_cent);
+			umbral=Integer.parseInt(getThreshold());
+			
+			
 		}catch(NumberFormatException e) 
 		{
 			return true;
 	    }
 		
-		if(greenNumber < 100)
+		if(greenNumber < umbral )
 		{
 			return false;
 		} else
@@ -290,8 +282,9 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		    return timestamp + offset;
 	}
 	
-	private void saveReport(String report_id, Timestamp creationTime, Timestamp startTime, Timestamp endTime, Double confidence,  String affectedKPI_Id, String affectedLocationId, String affectedSegmentationId)
+	private void saveReport(String report_id, Timestamp creationTime, Timestamp startTime, Timestamp endTime, Double confidence,  String affectedKPI_Id, String cell_name)
 	{
+		
 		DegradationReport report = new DegradationReport();
 		
 		
@@ -302,31 +295,49 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 		report.setConfidence(confidence);
 		
+		saveDegradationReport(report);
+		
 		
 		AffectedKPI_PK affectedKPI_PK = new AffectedKPI_PK();
 		affectedKPI_PK.setKpi_id(affectedKPI_Id);
 		affectedKPI_PK.setDegradation_report_id(report_id);
 		AffectedKPI affectedPKI= new AffectedKPI();
 		affectedPKI.setAffectedKPI_PK(affectedKPI_PK);
+		saveAffectedKPI(affectedPKI);
 		
-		AffectedLocation_PK affectedLocation_PK = new AffectedLocation_PK();
-		affectedLocation_PK.setLocation_id(affectedLocationId);
-		affectedLocation_PK.setDegradation_report_id(report_id);
-		AffectedLocation affectedLocation= new AffectedLocation();
-		affectedLocation.setAffectedLocation_PK(affectedLocation_PK);
+		List<Location> locations=  locationRepo.findAll();
 		
+		for (int i=0;i<locations.size();i++)
+		{   
+			Location location= locations.get(i);
+			if(location.getCell_name().compareTo(cell_name) == 0)
+			{
+				// Affected locations
+				
+				AffectedLocation_PK affectedLocation_PK = new AffectedLocation_PK();
+				affectedLocation_PK.setLocation_id(location.getId());
+				affectedLocation_PK.setDegradation_report_id(report_id);
+				AffectedLocation affectedLocation= new AffectedLocation();
+				affectedLocation.setAffectedLocation_PK(affectedLocation_PK);
+				affectedLocation.setCell_id(location.getCell_id());
+			 
+				// Afected Segmentations
+				AffectedSegmentation_PK affectedSegmentation_PK = new AffectedSegmentation_PK();
+				affectedSegmentation_PK.setSegmentation_id(location.getSegmentation_id());
+				affectedSegmentation_PK.setDegradation_report_id(report_id);
+				
+				
+				AffectedSegmentation affectedSegmentation= new AffectedSegmentation();
+				affectedSegmentation.setAffectedSegmentation_PK(affectedSegmentation_PK);
+				affectedSegmentation.setShare(100);
+				
+				saveAffected(affectedLocation, affectedSegmentation);
+			}
+		}
 		
-		AffectedSegmentation_PK affectedSegmentation_PK = new AffectedSegmentation_PK();
-		affectedSegmentation_PK.setSegmentation_id( affectedSegmentationId);
-		affectedSegmentation_PK.setDegradation_report_id(report_id);
-		
-		
-		AffectedSegmentation affectedSegmentation= new AffectedSegmentation();
-		affectedSegmentation.setAffectedSegmentation_PK(affectedSegmentation_PK);
-		affectedSegmentation.setShare(100);
-		saveDegradationReport(report);
-		
-		saveAffected (affectedPKI, affectedLocation, affectedSegmentation);
+	
+	
+	
 		
 
 	}
@@ -341,15 +352,26 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	
 	@Transactional
 	
-	public void saveAffected(AffectedKPI affectedKPI,AffectedLocation affectedLocation, AffectedSegmentation affectedSegmentation)
+	public void saveAffectedKPI(AffectedKPI affectedKPI)
 	{ 
 					
 		affectedKPIRepo.save(affectedKPI);
-		affectedLocationRepo.save(affectedLocation);
-		affectedSegmentationRepo.save(affectedSegmentation);
+		
+   }
+	
+	
+	@Transactional
+	
+	public void saveAffected(AffectedLocation affectedLocation, AffectedSegmentation affectedSegmentation)
+	{ 
+					
+		 affectedLocationRepo.save(affectedLocation);
+		 affectedSegmentationRepo.save(affectedSegmentation);
 		
 		
 	}
+
+
 
 	
 
