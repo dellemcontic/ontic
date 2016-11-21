@@ -1,6 +1,7 @@
 package ontic.af.analytic;
 
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -40,6 +41,11 @@ import ontic.af.action.db.repository.AffectedLocationRepository;
 import ontic.af.action.db.repository.AffectedSegmentationRepository;
 import ontic.af.action.db.repository.DegradationReportRepository;
 import ontic.af.action.db.repository.LocationRepository;
+import ontic.af.analytic.schema.Cell;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper; 
 
 @Configuration
 @EnableJpaRepositories
@@ -94,24 +100,36 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 		 
 	   String classification_input= new String(message.getPayload());
-	   Timestamp classification_time  = getClassificationTime(classification_input);
-	   String cell= getClassificationCell(classification_input);
+	   LOGGER.debug(classification_input);
+	   Cell cell = null;
+	   ObjectMapper mapper = new ObjectMapper();
+	  
+	   try {
+	         
+	           cell = mapper.readValue(classification_input, Cell.class);
+	           
+	           	      
+	       }  catch (Exception e) {
+		       System.out.println(e.toString());
+	       }
+       
+	   Timestamp classification_time  = getClassificationTime(cell);
+	   String cellName= getClassificationCell(cell);
 	   
-	 
-	   
-		if(getFlows(classification_input) >= 1)
+	  
+		if(getFlows(cell) >= 1)
 		{
-			if(isGoodClassification(classification_input))
+			if(isGoodClassification(cell))
 			{
-				LOGGER.info("Received good analysis:"+classification_time+". Cell:"+cell);
-				setGoodAnalysis(cell, classification_time);
+				LOGGER.info("Received good analysis:"+classification_time+". Cell:"+cellName);
+				setGoodAnalysis(cellName, classification_time);
 				
 				
 			}else
 			{
 								
-				LOGGER.info("Received BAD analysis:"+classification_time+". Cell:"+cell);
-				Timestamp bad_time= setBadAnalysis(cell, classification_time);
+				LOGGER.info("Received BAD analysis:"+classification_time+". Cell:"+cellName);
+				Timestamp bad_time= setBadAnalysis(cellName, classification_time);
 			    Calendar old_bad_time = Calendar.getInstance();
 				old_bad_time.setTimeInMillis(bad_time.getTime());
 				old_bad_time.add(Calendar.MINUTE,Integer.parseInt(this.getMinutesInBad()));
@@ -119,20 +137,25 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 				LOGGER.info("Time to remediation :"+new Timestamp(old_bad_time.getTimeInMillis()));
 				if(classification_time.getTime()  >= old_bad_time.getTimeInMillis() )
 				{
+					LOGGER.info("Creating a report");
+					Calendar currentTime = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+					currentTime.set(Calendar.ZONE_OFFSET, TimeZone.getTimeZone("UTC").getRawOffset());
 					Calendar report_time = Calendar.getInstance();
-					Timestamp creation_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
+					report_time.set(Calendar.HOUR_OF_DAY, currentTime.get(Calendar.HOUR_OF_DAY));
+					
+					Timestamp creation_time= new  Timestamp(report_time.getTimeInMillis());
 					report_time.add(Calendar.MINUTE,2);
-					Timestamp start_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
+					Timestamp start_time= new  Timestamp(report_time.getTimeInMillis());
 					report_time.add(Calendar.MINUTE,28);
-					Timestamp end_time= new  Timestamp(this.toUTC(report_time.getTimeInMillis()));
+					Timestamp end_time= new  Timestamp(report_time.getTimeInMillis());
 					Random random= new Random();
 					int randomInteger = random.nextInt(10); //(0..10)
 				    double confidence= 0.9+(randomInteger * 0.01);
 				    String report_id=(UUID.randomUUID()).toString();
-					saveReport(report_id,creation_time,start_time,end_time,confidence,"video_qoe",cell);
-					bad_analysis.remove(cell);
-					bad_analysis.put(cell, end_time);
-					report_send.put(cell,report_id);
+					saveReport(report_id,creation_time,start_time,end_time,confidence,"video_qoe",cellName);
+					bad_analysis.remove(cellName);
+					bad_analysis.put(cellName, end_time);
+					report_send.put(cellName,report_id);
 				}
 				
 				
@@ -189,7 +212,17 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 				if(actual_good_time >= good_limit_time )
 				{
 					//Elimina report
-					degradationReportRepo.delete(report_send.get(location));
+					//degradationReportRepo.delete(report_send.get(location));
+					//Actualiza report
+					DegradationReport report= degradationReportRepo.findOne(report_send.get(location));
+					Calendar currentTime = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+					currentTime.set(Calendar.ZONE_OFFSET, TimeZone.getTimeZone("UTC").getRawOffset());
+					Calendar cal = Calendar.getInstance();
+					cal.set(Calendar.HOUR_OF_DAY, currentTime.get(Calendar.HOUR_OF_DAY));
+					cal.add(Calendar.MINUTE, 1);
+					report.setStartDateTime(new Timestamp(cal.getTimeInMillis()));
+					report.setEndDateTime(new Timestamp(cal.getTimeInMillis()));
+					degradationReportRepo.save(report);
 					report_send.remove(location);
 					good_analysis.remove(location);
 					bad_analysis.remove(location);
@@ -207,9 +240,8 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 	   
 	}
 	
-	private Timestamp getClassificationTime(String classification){
-		int time_index=classification.indexOf("timestamp\":");
-		String time_value =classification.substring(time_index+12,classification.indexOf(",\"workstations\"")-1);
+	private Timestamp getClassificationTime(Cell cell){
+		String time_value =cell.getTimestamp();
 		String[] tiempo = time_value.split("_");
 		Calendar out= Calendar.getInstance();
 		out.set(Integer.parseInt(tiempo[0]),
@@ -220,43 +252,32 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 		return new Timestamp(out.getTimeInMillis());
 	}
-	private int  getFlows(String classification)
+	private int  getFlows(Cell cell)
 	{
-		int flow_index=classification.indexOf("weighted_Total\":");
 		
-		String flow_value =classification.substring(flow_index+16,classification.lastIndexOf("}"));
+		
+		return cell.getWeighted_Total();
 				
-		int flowNumber=0;
-		try{
-			flowNumber=Integer.parseInt(flow_value);
-		}catch(NumberFormatException e) 
-		{
-			return 0;
-		}
-		
-		return flowNumber;
-		
-		
-	}
-	private String  getClassificationCell(String classification)
-	{
-		int cell_index=classification.indexOf("name\":");
-		String cell_value =classification.substring(cell_index+7,classification.indexOf(",\"id\"")-1);
-		return cell_value;
 		
 		
 		
 	}
-	private boolean isGoodClassification(String classification)
+	private String  getClassificationCell(Cell cell)
 	{
-		int green_index=classification.indexOf("weighted_Green\":");
-		String green_per_cent =classification.substring(green_index+16,classification.indexOf(",\"weighted_Medium\""));
-		LOGGER.info("Good analisys percentage:"+green_per_cent);
-		int greenNumber=0;
+			
+		return cell.getName();
+		
+	}
+	private boolean isGoodClassification(Cell cell)
+	{
+	
+		
+		int greenNumber=cell.getWeighted_Green();
+		
 		int umbral=0;
 		try{
 			
-			greenNumber=Integer.parseInt(green_per_cent);
+			
 			umbral=Integer.parseInt(getThreshold());
 			
 			
@@ -265,6 +286,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 			return true;
 	    }
 		
+		LOGGER.info("Good analisys percentage:"+greenNumber+". Treshold:"+umbral);
 		if(greenNumber < umbral )
 		{
 			return false;
@@ -276,11 +298,19 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 	}
 	
-	 private  long toUTC(long timestamp) {
-		    Calendar cal = Calendar.getInstance();
-		    int offset = cal.getTimeZone().getOffset(timestamp);
-		    return timestamp + offset;
-	}
+	/* private  long toUTC(long timestamp) {
+		  
+		  final long localTimeZoneoffset = TimeZone.getDefault().getOffset(0L);
+		  final long dstOffset = TimeZone.getDefault().getDSTSavings();
+
+		 long offsetOftime = TimeZone.getDefault().getOffset(timestamp);
+		 long timeinmilli = 0L; 
+		 if(offsetOftime != localTimeZoneoffset)
+		    timeinmilli = timestamp+localTimeZoneoffset+dstOffset;
+		 else
+		    timeinmilli = timestamp+localTimeZoneoffset;
+		 return timeinmilli;
+	}*/
 	
 	private void saveReport(String report_id, Timestamp creationTime, Timestamp startTime, Timestamp endTime, Double confidence,  String affectedKPI_Id, String cell_name)
 	{
@@ -307,6 +337,7 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 		
 		List<Location> locations=  locationRepo.findAll();
 		
+		int share_acumulated=0;
 		for (int i=0;i<locations.size();i++)
 		{   
 			Location location= locations.get(i);
@@ -329,8 +360,21 @@ public class AnalyticsToDB implements AnalyticFunctionIF {
 				
 				AffectedSegmentation affectedSegmentation= new AffectedSegmentation();
 				affectedSegmentation.setAffectedSegmentation_PK(affectedSegmentation_PK);
-				affectedSegmentation.setShare(100);
+				Random rand = new Random();
 				
+				// For 5 segmentations ---> randomize share
+				int share=0;
+				if( i==4)
+				{
+					share=100 -share_acumulated;
+				
+			    }else
+			    {
+			    	 share= rand.nextInt(20) + 15; // Random 15->20
+			    }
+				
+				affectedSegmentation.setShare(share);
+				share_acumulated=share_acumulated+share;
 				saveAffected(affectedLocation, affectedSegmentation);
 			}
 		}
